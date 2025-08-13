@@ -1146,6 +1146,45 @@ function baseoutFunc() {
 }
 
 function copyformat() {
+    var texttocopy = message
+    texttocopy = texttocopy.replace(/<br>/g, "\n")
+    texttocopy = texttocopy.replace(/<a\b[^>]*>/gi, '')
+    texttocopy = texttocopy.replace(/<\/a>/gi, '');
+
+    texttocopy = texttocopy.replaceAll("'", '"')
+
+    texttocopy = texttocopy.replaceAll('<span class="orange-text">', '{C:attention}')
+    texttocopy = texttocopy.replaceAll('<span class="mult-text">', '{C:mult}')
+    texttocopy = texttocopy.replaceAll('<span class="chips-text">', '{C:chips}')
+    texttocopy = texttocopy.replaceAll('<span class="odds-text">', '{C:green}')
+    texttocopy = texttocopy.replaceAll('<span class="tarot-text">', '{C:tarot}')
+    texttocopy = texttocopy.replaceAll('<span class="spectral-text">', '{C:spectral}')
+    texttocopy = texttocopy.replaceAll('<span class="money-text">', '{C:money}')
+    texttocopy = texttocopy.replaceAll('<span class="spectral-text">', '{C:spectral}')
+    texttocopy = texttocopy.replaceAll('<span class="planet-text">', '{C:planet}')
+    texttocopy = texttocopy.replaceAll('<span class="planet-text">', '{C:planet}')
+    texttocopy = texttocopy.replaceAll('<span class="inactive-text">', '{C:inactive}')
+    texttocopy = texttocopy.replaceAll('<span class="spade-text">', '{C:spades}')
+    texttocopy = texttocopy.replaceAll('<span class="club-text">', '{C:hearts}')
+    texttocopy = texttocopy.replaceAll('<span class="heart-text">', '{C:clubs}')
+    texttocopy = texttocopy.replaceAll('<span class="diamond-text">', '{C:diamonds}')
+
+    texttocopy = texttocopy.replaceAll('<span class="fleuron-text">', '{C:bunc_fleurons}')
+    texttocopy = texttocopy.replaceAll('<span class="halberd-text">', '{C:bunc_halberds}')
+    texttocopy = texttocopy.replaceAll('<span class="exotic-text">', '{C:bunco_exotic}')
+    texttocopy = texttocopy.replaceAll('<span class="polymino-text">', '{C:bunco_virtual_dark}')
+
+    texttocopy = texttocopy.replaceAll('<span class="code-text">', '{C:cry_code}')
+
+    texttocopy = texttocopy.replaceAll('<span class="minorarcana-text">', '{C:paperback_minor_arcana}')
+
+    texttocopy = texttocopy.replaceAll('<span class="crown-text">', '{C:paperback_crowns}')
+    texttocopy = texttocopy.replaceAll('<span class="star-text">', '{C:paperback_stars}')
+
+    texttocopy = texttocopy.replaceAll('</span>', '{}')
+
+    navigator.clipboard.writeText(texttocopy);
+
     var copybase = document.getElementById("copyformatting");
     copybase.innerHTML = "Copied!";
 }
