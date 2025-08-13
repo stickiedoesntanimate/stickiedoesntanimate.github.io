@@ -1,0 +1,445 @@
+@font-face {
+      font-family: Balala;
+      src: url(../assets/m6x11modified.ttf); /* Added e accent for seance */
+}
+
+body {
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+}
+.main {
+    background-image: url('../assets/background.png');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    margin: 0px;
+    min-height: 100%;
+    width: 85%;
+    margin-left: 15%; /* Same as the width of the sidenav */
+}
+html {
+   margin: 0px;
+   height: 100%;
+   width: 100%;
+}
+ 
+h1 {
+    color: #3f4a4d;
+    font-family: Balala;
+    font-size: 48px;
+    letter-spacing: 2px;
+    margin: 0;
+}
+
+h2 {
+    color: #ffffff;
+    font-family: Balala;
+    font-size: 48px;
+    letter-spacing: 2px;
+    margin: 0;
+}
+
+.square {
+    border-radius: 25px;
+    height: 80%;
+    background-color: #3f4a4d;
+    margin: auto;
+    width: 70%;
+    border: 6px solid #dee2ea;
+    padding: 10px;
+    box-shadow: 0px 7px #ababab;
+}
+
+h3 {
+    color: #ffffff;
+    font-family: Balala;
+    font-size: 24px;
+    letter-spacing: 2px;
+    margin: 0;
+}
+
+
+.jokertextclass {
+    margin-right: 5%;
+    margin-left: 5%;
+    text-align: center;
+    text-wrap: balance;
+}
+
+.raritycolorclass {
+    background-color: #fff130;
+    margin-right: 30%;
+    margin-left: 30%;
+    text-align: center;
+    border-radius: 15px;
+    padding: 0px;
+    box-shadow: 0px 7px #888888;
+}
+
+.raritytext {
+    text-shadow: 0px 4px #558abb;
+}
+.whitesquare {
+    background-color: #ffffff;
+    height: 60%;
+    padding: 10px;
+    border-radius: 15px;
+    box-shadow: 0px 7px #ababab;
+}
+
+.footer {
+   /* position: fixed; */
+   position: absolute;
+   bottom: 00px;
+   right: 0px;
+   width: 85%;
+   background-color: #3f4a4d;
+   outline: 6px solid #dee2ea;
+   text-align: center;
+   /* outline-offset: -6px; */
+   /* box-shadow: 0px 7px #ababab; */
+   /* border-radius: 25px; */
+   margin: 0 auto;
+}
+p {
+    padding-right: 5px;
+    color: white;
+    font-family: Balala;
+}
+
+/* Text colors */
+.orange-text {
+    color: #ff8f00;
+}
+.mult-text {
+    color: #ff4c40;
+}
+.chips-text {
+    color: #0093ff;
+}
+.money-text {
+    color: #f5b244;
+}
+.odds-text {
+    color: #35bd86;
+}
+.tarot-text {
+    color: #7b559c;
+}
+.spectral-text {
+    color: #2e76fd;
+}
+.planet-text {
+    color: #00a8ca;
+}
+.inactive-text {
+    color: #b1b1b1;
+}
+
+.minorarcana-text {
+    color: #bda0d9;
+}
+.code-text {
+    color: #00ac2a;
+}
+.polymino-text {
+    color: #4fb661;
+}
+
+/* unvisited link */
+a:link {
+    color: inherit;
+    text-decoration: none;
+}
+
+/* visited link */
+a:visited {
+    color: inherit;
+    text-decoration: none;
+}
+
+/* mouse over link */
+a:hover {
+    color: inherit;
+    text-decoration: underline;
+}
+
+
+
+
+
+/* Suits */
+.spade-text {
+    color: #3a17b3;
+}
+.club-text {
+    color: #0081e6;
+}
+.heart-text {
+    color: #fa2315;
+}
+.diamond-text {
+    color: #e18400;
+}
+
+
+.crown-text {
+    color: #a37e4d;
+}
+.star-text {
+    color: #929292;
+}
+
+.fleuron-text {
+    color: #d6901a;
+}
+.halberd-text {
+    color: #6e3c63;
+}
+.exotic-text {
+    color: #ef9ae7;
+}
+
+
+
+.container {
+  display: block;
+  position: relative;
+  padding-left: 40px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 30px;
+  color: white;
+  font-family: Balala;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  width: 25px;
+}
+
+
+
+/* Hide the browser's default checkbox */
+.container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+/* Create a custom checkbox */
+.checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 25px;
+    width: 25px;
+    background-color: #1e2b2d;
+    border: 6px solid #dee2ea;
+    box-shadow: 0px 7px #ababab;
+    border-radius: 13px;
+}
+
+
+.container:hover input:checked ~ .checkmark{
+  background-color: #a22d2f;
+}
+.container:hover input ~ .checkmark{
+    background-color: #011213;
+    box-shadow: 0px 7px #6e6f6f;
+}
+.container:active input ~ .checkmark{
+    border-radius: 15px;
+}
+
+/* ff4c40 */
+/* When the checkbox is checked, add a background */
+.container input:checked ~ .checkmark {
+  background-color: #ff4c41;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the checkmark when checked */
+.container input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Style the checkmark/indicator */
+.container .checkmark:after {
+  left: 8px;
+  top: 2px;
+  width: 5px;
+  height: 13px;
+  border: solid white;
+  border-width: 0 4px 4px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+.btn {
+    color: white;
+    font-family: Balala;
+    padding-top: 3px;
+} 
+    
+.btn:hover .btn-slide-show-text1 {
+    margin-left: 65px;
+} 
+    
+.btn-layered-3d:before {
+    box-sizing: border-box;
+} 
+    
+.btn-layered-3d {
+    padding: 6px 2px;
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    outline: none;
+    border: 0px;
+    height: 30px;
+    vertical-align: middle;
+    text-decoration: none;
+    font-size: inherit;
+    font-family: inherit;
+    font-weight: 100;
+    border-radius: 15px;
+    transform-style: preserve-3d;
+    transition: transform 0.1s linear, background-color 0.1s linear;
+}
+     
+.btn-layered-3d::before {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 30px;
+    inset: 0px;
+    border-radius: inherit;
+    transform: translate3d(0px, 5px, -5px);
+    transition: transform 0.1s linear, box-shadow 0.1s linear;
+} 
+     
+.btn-layered-3d:active {
+    transform: translateY(5px);
+} 
+     
+.btn-layered-3d:active::before {
+    transform: translate3d(0px, 0em, -5px);
+} 
+     
+.btn-layered-3d--blue { /* text */
+    color: #ffffff;
+    background: #ff4c41;
+    font-family: Balala;
+    font-size: 24px;
+    white-space: nowrap;
+    letter-spacing: 1.5px;
+    text-shadow: 0px 2px 0px #a22d2f;
+    /* border: 2px solid rgb(61, 135, 255); */
+}
+.btn-layered-3d--blue:disabled { /* text */
+    color: #6b6b6b;
+    background: #545454;
+    text-shadow: 0px 0px 0px #545454;
+} 
+.btn-layered-3d--blue:hover:not(:disabled) {
+    background-color: #a22d2f;
+    text-shadow: 0px 2px 0px #67120d;
+}
+.btn-layered-3d--blue:hover:disabled {
+    background-color: #2d2d2d;
+    color: #5c5c5c;
+    text-shadow: 0px 0px 0px #2d2d2d;
+}
+.btn-layered-3d--blue::before {
+    background: #1e2e32;
+    /* box-shadow: rgb(61, 135, 255) 0px 0px 0px 2px; */
+}
+.btn-big {
+    width: 100%;
+    /* margin-left: 0%; */
+}
+.btn-small {
+    width: 100%;
+    font-size: 16px;
+    /* margin-left: 30%; */
+}
+
+
+
+
+.sidenav {
+    height: 100%;
+    width: 15%;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #3f4a4d;
+    overflow-x: hidden;
+    box-sizing: border-box;
+    outline: 6px solid #dee2ea;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    /* outline-offset: -6px; */
+  /* padding-top: 20px; */
+}
+.sidenavtop {
+    flex-shrink: 0; /* don’t let it shrink */
+    overflow: hidden;
+    border-bottom: 6px solid #dee2ea;
+    outline-offset: -6px;
+}
+.sidenavbottom {
+    overflow-y: scroll;
+    /* height: calc(70% - 20px); */
+    flex: 1;
+    height: 100%;
+}
+
+.sidenavpadder {
+    width: 100%;
+    height: 10px;
+}
+
+/* @media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+} */
+
+
+::-webkit-scrollbar{
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    border-radius: 8px;
+    background-color: #ababab;
+    border: 1px solid #ababab;
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 6px;
+    background-color: #ff4c41;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: #a22d2f;
+}
+
+::-webkit-scrollbar-track:hover {
+    border-radius: 8px;
+    background-color: #5c5c5c;
+    border: 1px solid #5c5c5c;
+}
