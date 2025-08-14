@@ -1362,6 +1362,23 @@ document.getElementById("morefluff").onclick = function (e) {
     changebuttonstates()
 }
 
+function openNav() {
+  document.getElementById("myNav").style.display = "block";
+}
+
+/* Close when someone clicks on the "x" symbol inside the overlay */
+function closeNav() {
+  document.getElementById("myNav").style.display = "none";
+}
+
+function openTab(tabName) {
+  var i;
+  var x = document.getElementsByClassName("tabs");
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";  
+  }
+  document.getElementById(tabName).style.display = "block";  
+}
 //regex to remove the contents of <a> (remove all hyperlinks)
 
 //.replace(/<a\b[^>]*>/gi, '')

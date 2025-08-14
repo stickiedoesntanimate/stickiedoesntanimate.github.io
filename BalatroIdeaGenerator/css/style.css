@@ -88,20 +88,6 @@ h3 {
     box-shadow: 0px 7px #ababab;
 }
 
-.footer {
-   /* position: fixed; */
-   position: absolute;
-   bottom: 00px;
-   right: 0px;
-   width: 85%;
-   background-color: #3f4a4d;
-   outline: 6px solid #dee2ea;
-   text-align: center;
-   /* outline-offset: -6px; */
-   /* box-shadow: 0px 7px #ababab; */
-   /* border-radius: 25px; */
-   margin: 0 auto;
-}
 p {
     padding-right: 5px;
     color: white;
@@ -337,7 +323,7 @@ a:hover {
     transform: translate3d(0px, 0em, -5px);
 } 
      
-.btn-layered-3d--blue { /* text */
+.btn-layered-3d--red { /* text */
     color: #ffffff;
     background: #ff4c41;
     font-family: Balala;
@@ -347,21 +333,49 @@ a:hover {
     text-shadow: 0px 2px 0px #a22d2f;
     /* border: 2px solid rgb(61, 135, 255); */
 }
-.btn-layered-3d--blue:disabled { /* text */
+.btn-layered-3d--red:disabled { /* text */
     color: #6b6b6b;
     background: #545454;
     text-shadow: 0px 0px 0px #545454;
 } 
-.btn-layered-3d--blue:hover:not(:disabled) {
+.btn-layered-3d--red:hover:not(:disabled) {
     background-color: #a22d2f;
     text-shadow: 0px 2px 0px #67120d;
 }
-.btn-layered-3d--blue:hover:disabled {
+.btn-layered-3d--red:hover:disabled {
     background-color: #2d2d2d;
     color: #5c5c5c;
     text-shadow: 0px 0px 0px #2d2d2d;
 }
-.btn-layered-3d--blue::before {
+.btn-layered-3d--red::before {
+    background: #1e2e32;
+    /* box-shadow: rgb(61, 135, 255) 0px 0px 0px 2px; */
+}
+.btn-layered-3d--orange { /* text */
+    color: #ffffff;
+    background: #ff9800;
+    font-family: Balala;
+    font-size: 24px;
+    white-space: nowrap;
+    letter-spacing: 1.5px;
+    text-shadow: 0px 2px 0px #ab6200;
+    /* border: 2px solid rgb(61, 135, 255); */
+}
+.btn-layered-3d--orange:disabled { /* text */
+    color: #6b6b6b;
+    background: #545454;
+    text-shadow: 0px 0px 0px #545454;
+} 
+.btn-layered-3d--orange:hover:not(:disabled) {
+    background-color: #a05b00;
+    text-shadow: 0px 2px 0px #683800;
+}
+.btn-layered-3d--orange:hover:disabled {
+    background-color: #2d2d2d;
+    color: #5c5c5c;
+    text-shadow: 0px 0px 0px #2d2d2d;
+}
+.btn-layered-3d--orange::before {
     background: #1e2e32;
     /* box-shadow: rgb(61, 135, 255) 0px 0px 0px 2px; */
 }
@@ -374,7 +388,79 @@ a:hover {
     font-size: 16px;
     /* margin-left: 30%; */
 }
-
+.btn-i {
+    width: 24px;
+    float: right;
+    /* margin-left: 0%; */
+}
+.btn-tab {
+    width: 30%;
+    margin-right: 1%;
+    margin-left: 0%;
+    margin-top: 10px;
+    height: 50px;
+}
+.btn-tab.btn-layered-3d--red { /* text */
+    color: #ffffff;
+    background: #ff4c41;
+    font-family: Balala;
+    font-size: 40px;
+    white-space: nowrap;
+    letter-spacing: 1.5px;
+    text-shadow: 0px 4px 0px #a22d2f;
+    /* border: 2px solid rgb(61, 135, 255); */
+}
+.btn-tab.btn-layered-3d::before {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 50px;
+    inset: 0px;
+    border-radius: inherit;
+    transform: translate3d(0px, 7px, -7px);
+    transition: transform 0.1s linear, box-shadow 0.1s linear;
+} 
+.btn-tab.btn-layered-3d:active::before {
+    transform: translate3d(0px, 0em, -7px);
+} 
+.btn-tab.btn-layered-3d:active {
+    transform: translateY(7px);
+} 
+.btn-bottom {
+    position: absolute;
+    bottom: 20px;
+    width: 97%;
+    margin-left: 1.5%;
+    letter-spacing: 1.5px;
+    height: 40px;
+    /* font-weight: 0; */
+}
+.btn-bottom.btn-layered-3d--orange { /* text */
+    color: #ffffff;
+    background: #ff9800;
+    font-family: Balala;
+    font-size: 24px;
+    white-space: nowrap;
+    letter-spacing: 1.5px;
+    text-shadow: 0px 2px 0px #ab6200;
+    /* border: 2px solid rgb(61, 135, 255); */
+}
+.btn-bottom.btn-layered-3d::before {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 40px;
+    inset: 0px;
+    border-radius: inherit;
+    transform: translate3d(0px, 7px, -7px);
+    transition: transform 0.1s linear, box-shadow 0.1s linear;
+} 
+.btn-bottom.btn-layered-3d:active::before {
+    transform: translate3d(0px, 0em, -7px);
+} 
+.btn-bottom.btn-layered-3d:active {
+    transform: translateY(7px);
+} 
 
 
 
@@ -386,7 +472,6 @@ a:hover {
     top: 0;
     left: 0;
     background-color: #3f4a4d;
-    overflow-x: hidden;
     box-sizing: border-box;
     outline: 6px solid #dee2ea;
     overflow: hidden;
@@ -442,4 +527,56 @@ a:hover {
     border-radius: 8px;
     background-color: #5c5c5c;
     border: 1px solid #5c5c5c;
+}
+
+
+.overlay {
+  /* Height & width depends on how you want to reveal the overlay (see JS below) */   
+  height: 100%;
+  width: 100%;
+  position: fixed; /* Stay in place */
+  z-index: 2; /* Sit on top */
+  left: 0;
+  top: 0;
+  background-color: rgb(0,0,0); /* Black fallback color */
+  background-color: rgba(125,125,125, 0.77); /* Black w/opacity */
+  overflow-x: hidden; /* Disable horizontal scroll */
+  transition: 0.5s; /* 0.5 second transition effect to slide in or slide down the overlay (height or width, depending on reveal) */
+}
+
+/* Position the content inside the overlay */
+.overlay-content {
+  position: relative;
+  top: 25%; /* 25% from the top */
+  width: 100%; /* 100% width */
+  text-align: center; /* Centered text/links */
+  margin-top: 30px; /* 30px top margin to avoid conflict with the close button on smaller screens */
+  overflow-x: hidden;
+}
+
+.infobox {
+    top: 5%;
+    position: relative;
+    border-radius: 25px;
+    height: 70%;
+    background-color: #3f4a4d;
+    margin: auto;
+    width: 70%;
+    
+    border: 6px solid #dee2ea;
+    /* padding: 10px; */
+    box-shadow: 0px 7px #ababab;
+}
+.infoboxdark {
+    top: 3%;
+    position: relative;
+    border-radius: 15px;
+    height: 70%;
+    background-color: #1e2e32;
+    margin: auto;
+    width: 90%;
+    
+    border: 6px solid #1e2e32;
+    /* padding: 10px; */
+    box-shadow: 0px 7px #0b1415;
 }

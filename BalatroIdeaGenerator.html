@@ -10,15 +10,47 @@
 </head>
  
 <body>
+    <div id="myNav" class="overlay">
+  <!-- Button to close the overlay navigation -->
+        <div class="infobox">
+            <button class="btn btn-layered-3d btn-layered-3d--red btn-tab" style="margin-left: 3.5%;" onclick="openTab('welcome')">Welcome!</button>
+            <button class="btn btn-layered-3d btn-layered-3d--red btn-tab" onclick="openTab('credits')">Credits</button>
+            <button class="btn btn-layered-3d btn-layered-3d--red btn-tab" onclick="openTab('settings')">Settings</button>
+            <div class="infoboxdark">
+                <div id="welcome" class="tabs">
+                    <p>Press Ctrl while clicking a mod to open its wiki!!! yay!!! more text more text</p>
+                </div>
+                <div id="credits" class="tabs" style="display:none">
+                    <p>
+                        Created by StickieAnimates,
+                        buttons modified from <a target="_blank" rel="noopener noreferrer" href="https://enjeck.com/btns/">btns</a> (Layered 3D),
+                        font is <a target="_blank" rel="noopener noreferrer" href="https://managore.itch.io/m6x11">m6x11</a> by <a target="_blank" rel="noopener noreferrer" href="https://managore.itch.io/">Daniel Linssen</a>,
+                        various references from <a target="_blank" rel="noopener noreferrer" href="https://www.w3schools.com/">W3Schools</a>, background png/webp from <a target="_blank" rel="noopener noreferrer" href="https://www.reddit.com/r/balatro/comments/1i4r0an/balatro_highres_backgrounds/">Reddit</a>
+                        <br>Not affiliated with <a target="_blank" rel="noopener noreferrer" href="https://localthunk.com/">LocalThunk</a> or <a target="_blank" rel="noopener noreferrer" href="https://www.playstack.com/">Playstack</a>
+                        <h3><a target="_blank" rel="noopener noreferrer" href="https://github.com/stickiedoesntanimate/stickiedoesntanimate.github.io">Source Code</a></h3>
+                    </p>
+                </div>
+                <div id="settings" class="tabs" style="display:none">
+                    <p>ugh</p>
+                    <p>settings tab</p>
+                </div>
+            </div>
+            <button class="btn btn-layered-3d btn-layered-3d--orange btn-big btn-bottom" onclick="closeNav()">Back</button>
+        </div>
+  <!-- Overlay content -->
+        <div class="overlay-content">
+             
+        </div>
+    </div>  
     <div class="sidenav">
         <div class="sidenavtop">
-            <button class="btn btn-layered-3d btn-layered-3d--blue btn-big" onclick="generate()">Generate</button>
+            <button class="btn btn-layered-3d btn-layered-3d--red btn-big btn-big" onclick="generate()">Generate</button>
             <div class="sidenavpadder"></div>
-            <button class="btn btn-layered-3d btn-layered-3d--blue btn-small" onclick="copybasetext()" onmouseout="baseoutFunc()" id="copybase">Copy Base Text</button>
-            <button class="btn btn-layered-3d btn-layered-3d--blue btn-small" onclick="copyformat()" onmouseout="formatout()" id="copyformatting">Copy Formatting</button>
+            <button class="btn btn-layered-3d btn-layered-3d--red btn-small" onclick="copybasetext()" onmouseout="baseoutFunc()" id="copybase">Copy Base Text</button>
+            <button class="btn btn-layered-3d btn-layered-3d--red btn-small" onclick="copyformat()" onmouseout="formatout()" id="copyformatting">Copy Formatting</button>
             <div class="sidenavpadder"></div>
-            <button class="btn btn-layered-3d btn-layered-3d--blue btn-small" onclick="checkall()" id="checkall">Check All</button>
-            <button class="btn btn-layered-3d btn-layered-3d--blue btn-small" onclick="uncheckall()" id="uncheckall" disabled>Uncheck All</button>
+            <button class="btn btn-layered-3d btn-layered-3d--red btn-small" onclick="checkall()" id="checkall">Check All</button>
+            <button class="btn btn-layered-3d btn-layered-3d--red btn-small" onclick="uncheckall()" id="uncheckall" disabled>Uncheck All</button>
             <div class="sidenavpadder"></div>
         </div>
         <div class="sidenavpadder"></div>
@@ -114,6 +146,7 @@
         </div>
     </div>
     <div class="main">
+        <button class="btn btn-layered-3d btn-layered-3d--orange btn-i" onclick="openNav()">i</button>
         <div class="square">
             <div class="whitesquare">
                 <div class="jokertextclass">
@@ -131,17 +164,6 @@
             </div>
         </div>
         <script src="BalatroIdeaGenerator/js/main.js"></script>
-
-        <div class="footer">
-            <p>
-                Created by StickieAnimates,
-                buttons modified from <a target="_blank" rel="noopener noreferrer" href="https://enjeck.com/btns/">btns</a> (Layered 3D),
-                font is <a target="_blank" rel="noopener noreferrer" href="https://managore.itch.io/m6x11">m6x11</a> by <a target="_blank" rel="noopener noreferrer" href="https://managore.itch.io/">Daniel Linssen</a>,
-                various references from <a target="_blank" rel="noopener noreferrer" href="https://www.w3schools.com/">W3Schools</a>, background png/webp from <a target="_blank" rel="noopener noreferrer" href="https://www.reddit.com/r/balatro/comments/1i4r0an/balatro_highres_backgrounds/">Reddit</a>
-                <br>Not affiliated with <a target="_blank" rel="noopener noreferrer" href="https://localthunk.com/">LocalThunk</a> or <a target="_blank" rel="noopener noreferrer" href="https://www.playstack.com/">Playstack</a>
-                <h3><a target="_blank" rel="noopener noreferrer" href="https://github.com/stickiedoesntanimate/stickiedoesntanimate.github.io">Source Code</a></h3>
-            </p>
-        </div>
     </div>
 </body>
  
