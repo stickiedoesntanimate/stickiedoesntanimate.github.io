@@ -56,26 +56,45 @@ function removerarity(raritytoremove) {
     removefrom(raritytoremove, rarities)
 }
 function weightedRandom(items, weights) {
-  if (items.length !== weights.length) {
-    console.log("Items and weights arrays must have the same length. THE ITEMS:" + items);
-  }
+    if (document.getElementById("disableweights").checked) {
+        return getRandomItem(items)
+    } else {
+        if (items.length !== weights.length) {
+            console.log("Items and weights arrays must have the same length. THE ITEMS:" + items);
+        }
 
-  let totalWeight = 0;
-  for (let i = 0; i < weights.length; i++) {
-    totalWeight += weights[i];
-  }
+        let totalWeight = 0;
+            for (let i = 0; i < weights.length; i++) {
+            totalWeight += weights[i];
+        }
 
-  const randomNumber = Math.random() * totalWeight;
+        const randomNumber = Math.random() * totalWeight;
 
-  let accumulatedWeight = 0;
-  for (let i = 0; i < items.length; i++) {
-    accumulatedWeight += weights[i];
-    if (randomNumber < accumulatedWeight) {
-      return items[i];
+        let accumulatedWeight = 0;
+        for (let i = 0; i < items.length; i++) {
+        accumulatedWeight += weights[i];
+        if (randomNumber < accumulatedWeight) {
+            return items[i];
+        }
+        }
+        // This should ideally not be reached if weights are positive and totalWeight is correctly calculated.
+        return null;
+    }
+}
+function getCookie(cname) {
+  let name = cname + "=";
+  let decodedCookie = decodeURIComponent(document.cookie);
+  let ca = decodedCookie.split(';');
+  for(let i = 0; i <ca.length; i++) {
+    let c = ca[i];
+    while (c.charAt(0) == ' ') {
+      c = c.substring(1);
+    }
+    if (c.indexOf(name) == 0) {
+      return c.substring(name.length, c.length);
     }
   }
-  // This should ideally not be reached if weights are positive and totalWeight is correctly calculated.
-  return null; 
+  return "";
 }
 function pickrandomjoker() {
     const jokers = [
@@ -637,7 +656,7 @@ const hevven = [
     
 ]
 function changebuttonstates() {
-    const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+    const checkboxes = document.querySelectorAll('div.sidenavbottom > label.container > input[type="checkbox"]');
 
     let allChecked = true;
     let nonechecked = true
@@ -1061,10 +1080,10 @@ function generate() {
         }
 
     } while (message.includes("["))
-    if (!document.getElementById("fusions").checked) {
-        var rarity = weightedRandom(rarities, rarityweights)
-    } else {
+    if (document.getElementById("fusions").checked  && !(document.getElementById("disablefusion").checked)) {
         var rarity = "Fusion"
+    } else {
+        var rarity = weightedRandom(rarities, rarityweights)
     }
     if (rarity === "Common") {
         var raritytext = "Common"
@@ -1195,8 +1214,9 @@ function formatout() {
 }
 
 function checkall() {
-    const checkboxes = document.querySelectorAll('input[type="checkbox"]');
-
+    //const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+    //const sidenavbottom = document.querySelector("sidenavbottom")
+    const checkboxes = document.querySelectorAll('div.sidenavbottom > label.container > input[type="checkbox"]');
     for (let i = 0; i < checkboxes.length; i++) {
         checkboxes[i].checked = true  
     }
@@ -1210,7 +1230,7 @@ function checkall() {
     changebuttonstates()
 }
 function uncheckall() {
-    const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+    const checkboxes = document.querySelectorAll('div.sidenavbottom > label.container > input[type="checkbox"]');
 
     for (let i = 0; i < checkboxes.length; i++) {
         checkboxes[i].checked = false
@@ -1369,7 +1389,20 @@ function openNav() {
 /* Close when someone clicks on the "x" symbol inside the overlay */
 function closeNav() {
   document.getElementById("myNav").style.display = "none";
+  document.cookie = "firstopen=false";
 }
+
+function clearcookies() {
+    if (confirm("Are you sure? This page will reload.") == true) {
+        document.cookie.split(';').forEach(cookie => {
+            const eqPos = cookie.indexOf('=');
+            const name = eqPos > -1 ? cookie.substring(0, eqPos) : cookie;
+            document.cookie = name + '=;expires=Thu, 01 Jan 1970 00:00:00 GMT';
+            window.location.reload();
+        });
+    }
+}
+
 
 function openTab(tabName) {
   var i;
@@ -1379,11 +1412,40 @@ function openTab(tabName) {
   }
   document.getElementById(tabName).style.display = "block";  
 }
-//regex to remove the contents of <a> (remove all hyperlinks)
 
-//.replace(/<a\b[^>]*>/gi, '')
-//.replace(/<\/a>/gi, '');
+const backgroundlist = [
+    "Default (WebP)", "Default (Png)", "Poker", "Tarot", "Planet", "Spectral", "Buffoon", "Standard"
+]
+const backgroundpaths = [
+    "Default.webp", "Default.png", "Poker.png", "Tarot.png", "Planet.png", "Spectral.png", "Buffoon.png", "Standard.png"
+]
+var backgroundindex = 0
+const main = document.getElementById('main');
 
-//dont mess with variables because i dont want to
+function backgroundleft() {
+    backgroundindex = backgroundindex -1
+    if (backgroundindex === -1) {
+        backgroundindex = backgroundlist.length -1
+    }
 
+    main.style.backgroundImage = "url('./BalatroIdeaGenerator/assets/backgrounds/" + backgroundpaths[backgroundindex]
+    document.getElementById("backgroundname").innerHTML = backgroundlist[backgroundindex]
+}
+function backgroundright() {
+    backgroundindex = backgroundindex +1
+    if (backgroundindex >= backgroundlist.length) {
+        backgroundindex = 0
+    }
 
+    main.style.backgroundImage = "url('./BalatroIdeaGenerator/assets/backgrounds/" + backgroundpaths[backgroundindex]
+    document.getElementById("backgroundname").innerHTML = backgroundlist[backgroundindex]
+}
+
+window.onload = function() {
+    if (getCookie("firstopen") === "false") {
+        closeNav()
+    }
+    
+    main.style.backgroundImage = "url('./BalatroIdeaGenerator/assets/backgrounds/" + backgroundpaths[backgroundindex]
+    document.getElementById("backgroundname").innerHTML = backgroundlist[backgroundindex]
+};

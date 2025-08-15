@@ -7,18 +7,34 @@
     <title>Balatro Idea Generator</title>
     <link rel="stylesheet" href="BalatroIdeaGenerator/css/style.css">
     <link rel="icon" type="image/x-icon" href="BalatroIdeaGenerator/assets/favicon.png">
+
+    <meta content="Embed Title" property="og:title" />
+    <meta content="A Joker generator for Balatro!" property="og:description" />
+    <meta content="https://stickiedoesntanimate.github.io/BalatroIdeaGenerator" property="og:url" />
+    <meta content="#ff4c41" data-react-helmet="true" name="theme-color" />
+
+    <link rel="preload" href="./BalatroIdeaGenerator/assets/backgrounds/Buffoon.png" as="image" />
+    <link rel="preload" href="./BalatroIdeaGenerator/assets/backgrounds/Default.png" as="image" />
+    <link rel="preload" href="./BalatroIdeaGenerator/assets/backgrounds/Default.webp" as="image" />
+    <link rel="preload" href="./BalatroIdeaGenerator/assets/backgrounds/Planet.png" as="image" />
+    <link rel="preload" href="./BalatroIdeaGenerator/assets/backgrounds/Poker.png" as="image" />
+    <link rel="preload" href="./BalatroIdeaGenerator/assets/backgrounds/Spectral.png" as="image" />
+    <link rel="preload" href="./BalatroIdeaGenerator/assets/backgrounds/Standard.png" as="image" />
+    <link rel="preload" href="./BalatroIdeaGenerator/assets/backgrounds/Tarot.png" as="image" />
+
+
 </head>
  
 <body>
     <div id="myNav" class="overlay">
   <!-- Button to close the overlay navigation -->
         <div class="infobox">
-            <button class="btn btn-layered-3d btn-layered-3d--red btn-tab" style="margin-left: 3.5%;" onclick="openTab('welcome')">Welcome!</button>
+            <button class="btn btn-layered-3d btn-layered-3d--red btn-tab" style="margin-left: 3.5%;" onclick="openTab('welcome')">About</button>
             <button class="btn btn-layered-3d btn-layered-3d--red btn-tab" onclick="openTab('credits')">Credits</button>
             <button class="btn btn-layered-3d btn-layered-3d--red btn-tab" onclick="openTab('settings')">Settings</button>
             <div class="infoboxdark">
                 <div id="welcome" class="tabs">
-                    <p>Press Ctrl while clicking a mod to open its wiki!!! yay!!! more text more text</p>
+                    <p>Press Ctrl while clicking a mod to open its wiki</p>
                 </div>
                 <div id="credits" class="tabs" style="display:none">
                     <p>
@@ -31,8 +47,29 @@
                     </p>
                 </div>
                 <div id="settings" class="tabs" style="display:none">
-                    <p>ugh</p>
-                    <p>settings tab</p>
+                    <label class="container">
+                        <input type="checkbox" id="disablefusion">
+                        <span class="checkmark"></span>
+                        Disable&nbsp;Fusion&nbsp;Rarity
+                    </label>
+                    <br>
+                    <label class="container">
+                        <input type="checkbox" id="disableweights">
+                        <span class="checkmark"></span>
+                        Disable&nbsp;Weights&nbsp;(Chaos&nbsp;Mode)
+                    </label>
+                    <br>
+                        <div class="selectorlabel">Background</div>
+                        <div class="row">
+                        <button class="btn btn-layered-3d btn-layered-3d--red btn-arrow" onclick="backgroundleft()"><i class="arrow left"></i></button>
+                        <div class="selectorbox">
+                            <p id="backgroundname">Placeholder</p>
+                        </div>
+                        <button class="btn btn-layered-3d btn-layered-3d--red btn-arrow"  onclick="backgroundright()"><i class="arrow right"></i></button>
+                        </div>
+                    <br>
+                    <br>
+                    <button class="btn btn-layered-3d btn-layered-3d--red btn-big" onclick="clearcookies()">Clear Cookies</button>
                 </div>
             </div>
             <button class="btn btn-layered-3d btn-layered-3d--orange btn-big btn-bottom" onclick="closeNav()">Back</button>
@@ -46,9 +83,12 @@
         <div class="sidenavtop">
             <button class="btn btn-layered-3d btn-layered-3d--red btn-big btn-big" onclick="generate()">Generate</button>
             <div class="sidenavpadder"></div>
+            <button class="btn btn-layered-3d btn-layered-3d--orange btn-big" onclick="openNav()">Menu</button>
+            <div class="sidenavpadder"></div>
             <button class="btn btn-layered-3d btn-layered-3d--red btn-small" onclick="copybasetext()" onmouseout="baseoutFunc()" id="copybase">Copy Base Text</button>
             <button class="btn btn-layered-3d btn-layered-3d--red btn-small" onclick="copyformat()" onmouseout="formatout()" id="copyformatting">Copy Formatting</button>
             <div class="sidenavpadder"></div>
+            
             <button class="btn btn-layered-3d btn-layered-3d--red btn-small" onclick="checkall()" id="checkall">Check All</button>
             <button class="btn btn-layered-3d btn-layered-3d--red btn-small" onclick="uncheckall()" id="uncheckall" disabled>Uncheck All</button>
             <div class="sidenavpadder"></div>
@@ -145,8 +185,7 @@
             <div class="sidenavpadder"></div>
         </div>
     </div>
-    <div class="main">
-        <button class="btn btn-layered-3d btn-layered-3d--orange btn-i" onclick="openNav()">i</button>
+    <div class="main" id="main">
         <div class="square">
             <div class="whitesquare">
                 <div class="jokertextclass">
