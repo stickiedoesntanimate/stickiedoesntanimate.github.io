@@ -1460,7 +1460,7 @@ window.onload = function() {
 
     for (let i = 0; i < checkboxes.length; i++) {
         if (getCookie(checkboxes[i].id) === "true") {
-            checkboxes[i].checked
+            checkboxes[i].checked = true
         }
     }
     
