@@ -680,6 +680,7 @@ function changebuttonstates() {
     } else {
         document.getElementById('uncheckall').disabled = false;
     }
+    save()
 }
 
 function initvisibility() {
@@ -1414,10 +1415,10 @@ function openTab(tabName) {
 }
 
 const backgroundlist = [
-    "Default (WebP)", "Default (Png)", "Poker", "Tarot", "Planet", "Spectral", "Buffoon", "Standard"
+    "Balatro (WebP)", "Balatro (Png)", "Poker", "Tarot", "Planet", "Spectral", "Buffoon", "Standard"
 ]
 const backgroundpaths = [
-    "Default.webp", "Default.png", "Poker.png", "Tarot.png", "Planet.png", "Spectral.png", "Buffoon.png", "Standard.png"
+    "Balatro.webp", "Balatro.png", "Poker.png", "Tarot.png", "Planet.png", "Spectral.png", "Buffoon.png", "Standard.png"
 ]
 var backgroundindex = 0
 const main = document.getElementById('main');
@@ -1430,22 +1431,42 @@ function backgroundleft() {
 
     main.style.backgroundImage = "url('./BalatroIdeaGenerator/assets/backgrounds/" + backgroundpaths[backgroundindex]
     document.getElementById("backgroundname").innerHTML = backgroundlist[backgroundindex]
+    document.cookie = "background=" + backgroundlist[backgroundindex]
 }
 function backgroundright() {
-    backgroundindex = backgroundindex +1
+    backgroundindex = backgroundindex + 1
     if (backgroundindex >= backgroundlist.length) {
         backgroundindex = 0
     }
 
     main.style.backgroundImage = "url('./BalatroIdeaGenerator/assets/backgrounds/" + backgroundpaths[backgroundindex]
     document.getElementById("backgroundname").innerHTML = backgroundlist[backgroundindex]
+    document.cookie = "background=" + backgroundlist[backgroundindex]
 }
 
 window.onload = function() {
     if (getCookie("firstopen") === "false") {
         closeNav()
     }
-    
+
+    backgroundindex = backgroundlist.indexOf(getCookie("background"))
+    if (backgroundindex === -1 ) {
+        backgroundindex = 0
+    }
     main.style.backgroundImage = "url('./BalatroIdeaGenerator/assets/backgrounds/" + backgroundpaths[backgroundindex]
     document.getElementById("backgroundname").innerHTML = backgroundlist[backgroundindex]
+
+    const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+
+    for (let i = 0; i < checkboxes.length; i++) {
+        checkboxes[i].checked = getCookie(checkboxes[i].id)
+    }
+    
 };
+function save() {
+    const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+
+    for (let i = 0; i < checkboxes.length; i++) {
+        document.cookie = checkboxes[i].id + "=" + checkboxes[i].checked
+    }
+}

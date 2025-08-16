@@ -92,6 +92,7 @@ p {
     padding-right: 5px;
     color: white;
     font-family: Balala;
+    text-align: center;
 }
 
 /* Text colors */
@@ -619,4 +620,15 @@ a:hover {
   display: grid;
   grid-template-columns: 5fr 90fr 5fr;
   gap: 10px;
+}
+
+.sourcecodecenter {
+    text-align: center;
+}
+.backgroundname {
+    font-size: 30px;
+    margin: 0px;
+    margin-top: 15px;
+    padding: 0px;
+    text-shadow: 0px 4px 0px #a22d2f;
 }
