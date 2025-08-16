@@ -1459,7 +1459,9 @@ window.onload = function() {
     const checkboxes = document.querySelectorAll('input[type="checkbox"]');
 
     for (let i = 0; i < checkboxes.length; i++) {
-        checkboxes[i].checked = getCookie(checkboxes[i].id)
+        if (getCookie(checkboxes[i].id) === "true") {
+            checkboxes[i].checked
+        }
     }
     
 };
