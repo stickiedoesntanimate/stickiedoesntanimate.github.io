@@ -1,4 +1,4 @@
-var version = "1.0.3"
+var version = "1.0.4"
 
 function getRandomItem(arr) {
     const index = Math.floor(Math.random() * arr.length);
