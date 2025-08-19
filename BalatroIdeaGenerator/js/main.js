@@ -1,3 +1,5 @@
+var version = "1.0.3"
+
 function getRandomItem(arr) {
     const index = Math.floor(Math.random() * arr.length);
     return arr[index];
@@ -5,6 +7,20 @@ function getRandomItem(arr) {
 
 function getRandomInt(max) {
   return Math.floor(Math.random() * max);
+}
+
+function checkOccurrences(str, substr) {
+  if (!substr) return 0; // avoid infinite loop if empty substring
+  
+  let count = 0;
+  let pos = 0;
+
+  while ((pos = str.indexOf(substr, pos)) !== -1) {
+    count++;
+    pos += substr.length; // move past the found substring
+  }
+
+  return count
 }
 
 function getArticle(word) {
@@ -883,6 +899,8 @@ var message = getRandomItem(formats)
 function generate() {
     message = getRandomItem(formats)
 
+
+
     if (getRandomInt(4) === 1) { //1 in number chance to add an "ending"
         message = message.concat("<br>" + getRandomItem(end))
     }
@@ -892,6 +910,34 @@ function generate() {
     message = message.replace("[independentstart]", getRandomItem(independentstart))
     message = message.replace("[mid]", getRandomItem(mid))
 
+    var stringtotest = message.toLowerCase()
+    stringtotest = stringtotest.replace("when a hand is played", "")
+
+    if (stringtotest.includes("play")) {
+        message = message.replace("When a hand is played, ", "")
+    }
+
+
+    var changesuit = 0
+    var changerank = 0
+    var changehand = 0
+
+    var changetag = 0
+    if (getRandomInt(100) > 60) {
+        changesuit = 1
+    }
+    
+    if (getRandomInt(100) > 60) {
+        changerank = 1
+    }
+
+    if (getRandomInt(100) > 50) {
+        changehand = 1
+    }
+
+    if (getRandomInt(100) > 30) {
+        changetag = 1
+    }
     do {
         message = message.replace("[chance]", (getRandomInt(5)+1)*2)
 
@@ -904,6 +950,7 @@ function generate() {
         }
         //message = message.replace("[multnumber]", getRandomInt(16)+1)
         //message = message.replace("[chipsnumber]", getRandomInt(31)+4)
+
         if (message.includes("[suit]")) {
             var suitpicked = getRandomItem(suit)
             if (suitpicked.includes("Light Suit") || suitpicked.includes("Dark Suit")) {
@@ -918,6 +965,11 @@ function generate() {
                 message = message.replace("[suit]",(suitpicked + "</a></span>"))
             } else {//</a>
                 message = message.replace("[suit]",(suitpicked + "</span>"))
+            }
+            if (changesuit === 1) {
+                changesuit = 2
+            } else if (changesuit === 2) {
+                changesuit = 3
             }
         }
         if (message.includes("[suitp]")) {
@@ -936,7 +988,14 @@ function generate() {
             } else {//</a>
                 message = message.replace("[suitp]",(suitpicked + "s</span>"))
             }
+            if (changesuit === 1) {
+                changesuit = 2
+            } else if (changesuit === 2) {
+                changesuit = 3
+            }
         }
+        
+
 
         if (message.includes("[containinghand]")) {
             var containinghandpicked = getRandomItem(containinghand)
@@ -947,6 +1006,11 @@ function generate() {
                 message = message.replace("[containinghand]", (getArticle(containinghandpicked) + " " + '<span class="orange-text"><a target="_blank" rel="noopener noreferrer" href="https://balatromods.miraheze.org/wiki/Paperback/Poker_Hands">'+ containinghandpicked + '</a></span>'))
             } else {
                 message = message.replace("[containinghand]", (getArticle(containinghandpicked) + " " + '<span class="orange-text"><a target="_blank" rel="noopener noreferrer" href="https://balatrowiki.org/w/Poker_Hands">'+ containinghandpicked + '</a></span>'))
+            }
+            if (changehand === 1) {
+                changehand = 2
+            } else if (changehand === 2) {
+                changehand = 3
             }
         }
         if (message.includes("[hand]")) {
@@ -960,6 +1024,11 @@ function generate() {
                 message = message.replace("[hand]", (getArticle(handpicked) + " " + '<span class="orange-text"><a target="_blank" rel="noopener noreferrer" href="https://balatromods.miraheze.org/wiki/Cryptid/Poker_Hands">'+ handpicked + '</a></span>'))
             } else {
                 message = message.replace("[hand]", (getArticle(handpicked) + " " + '<span class="orange-text"><a target="_blank" rel="noopener noreferrer" href="https://balatrowiki.org/w/Poker_Hands">'+ handpicked + '</a></span>'))
+            }
+            if (changehand === 1) {
+                changehand = 2
+            } else if (changehand === 2) {
+                changehand = 3
             }
         }
 
@@ -997,6 +1066,16 @@ function generate() {
                 var rankchosen = getRandomItem(rank)
                 message = message.replace("[rankp]", ('<span class="orange-text">'+ rankchosen + "s" + '</span>'))
                 rank.push(ranktoaddback)
+
+                if (changerank === 1) {
+                    changerank = 3
+                }
+            }
+            var rankcount = checkOccurrences(message, "[arank]") + checkOccurrences(message, "[rank]") + checkOccurrences(message, "[rankp]")
+            if (rankcount > 1) {
+                if (changerank === 1) {
+                    changerank = 3
+                }
             }
             if (paperback.includes(rankchosen)) {
                 message = message.replace("[arank]", (getArticle(rankchosen) + '<span class="orange-text"><a target="_blank" rel="noopener noreferrer" href="https://balatromods.miraheze.org/wiki/Paperback#Ranks"> '+ rankchosen + '</a></span>'))
@@ -1006,6 +1085,11 @@ function generate() {
                 message = message.replace("[arank]", (getArticle(rankchosen) + '<span class="orange-text"> '+ rankchosen + '</span>'))
                 message = message.replace("[rank]", ('<span class="orange-text">'+ rankchosen + '</span>'))
                 message = message.replace("[rankp]", ('<span class="orange-text">'+ rankchosen + "s" + '</span>'))
+            }
+            if (changerank === 1) {
+                changerank = 2
+            } else if (changerank === 2) {
+                changerank = 3
             }
         }
         if (getRandomInt(2) === 1) { //one in number chance to replace with a specific spectral/tarot
@@ -1071,6 +1155,9 @@ function generate() {
                         message = message.replace('<span class="orange-text"><a target="_blank" rel="noopener noreferrer" href="https://balatrowiki.org/w/Tags">', '<span class="money-text"><a target="_blank" rel="noopener noreferrer" href="https://balatrowiki.org/w/Tags">')
                     }
                 }
+                if (changetag === 1) {
+                    changetag = 2
+                }
             }
         }
         else {
@@ -1134,6 +1221,78 @@ function generate() {
     }
     if (document.getElementById("fusions").checked) {
         message = message.concat("<br><span class='inactive-text'>(" + pickrandomjoker() + " + " + pickrandomjoker() + ")</span>")
+    }
+
+    if ((changehand > 1 || changerank > 1 || changesuit > 1 || changetag > 1) && getRandomInt(100) > 40) {
+        var multiplechanges = 0
+        var changeextension = "<br><span class='inactive-text'>("
+        if (changehand === 2) {
+            changeextension = changeextension.concat("Hand")
+            multiplechanges = multiplechanges + 1
+        } else if (changehand === 3) {
+            changeextension = changeextension.concat("Hands")
+            multiplechanges = 2
+        }
+
+        if (changerank > 1) {
+            if (multiplechanges > 0) {
+                changeextension = changeextension.concat(" and ")
+            }
+            if (changerank === 2) {
+                changeextension = changeextension.concat("Rank")
+                multiplechanges = multiplechanges + 1
+            } else if (changerank === 3) {
+                changeextension = changeextension.concat("Ranks")
+                multiplechanges = 2
+            }
+        }
+        if (changesuit > 1) {
+            if (multiplechanges > 0) {
+                changeextension = changeextension.concat(" and ")
+            }
+            if (changesuit === 2) {
+                changeextension = changeextension.concat("Suit")
+                multiplechanges = multiplechanges + 1
+            } else if (changesuit === 3) {
+                changeextension = changeextension.concat("Suits")
+                multiplechanges = 2
+            }
+        }
+
+        if (changetag > 1) {
+            if (multiplechanges > 0) {
+                changeextension = changeextension.concat(" and ")
+            }
+            if (changetag >= 2) {
+                changeextension = changeextension.concat("Tag")
+                multiplechanges = multiplechanges + 1
+            }
+        }
+
+        if (multiplechanges > 1) {
+            changeextension = changeextension.concat(" change")
+        } else {
+            changeextension = changeextension.concat(" changes")
+        }
+        
+        while (checkOccurrences(changeextension, " and") > 1) {
+            changeextension = changeextension.replace(" and", ",")
+        }
+
+        const changetriggers = [
+            "at the end of round", "when a hand is played", "when a discard is used", "when a boss blind is defeated"
+        ]
+        const changetriggersweight = [
+            40, 20, 15, 15
+        ]
+
+        var whenchanged = weightedRandom(changetriggers, changetriggersweight)
+
+
+        changeextension = changeextension.concat(" ", whenchanged, ")</span>")
+
+
+        message = message.concat(changeextension)
     }
 
     document.getElementById("jokertext").innerHTML = "<h1>" + message + "</h1>"
@@ -1390,7 +1549,7 @@ function openNav() {
 /* Close when someone clicks on the "x" symbol inside the overlay */
 function closeNav() {
   document.getElementById("myNav").style.display = "none";
-  document.cookie = "firstopen=false";
+  document.cookie = "firstopen=" + version;
 }
 
 function clearcookies() {
@@ -1412,6 +1571,13 @@ function openTab(tabName) {
     x[i].style.display = "none";  
   }
   document.getElementById(tabName).style.display = "block";  
+}
+
+function reportbug() {
+    window.open("https://github.com/stickiedoesntanimate/stickiedoesntanimate.github.io/issues/new", "_blank", "noopener noreferrer");
+}
+function suggest() {
+    window.open("https://discord.com/channels/@me/881705806146445362", "_blank", "noopener noreferrer");
 }
 
 const backgroundlist = [
@@ -1445,8 +1611,10 @@ function backgroundright() {
 }
 
 window.onload = function() {
-    if (getCookie("firstopen") === "false") {
+    if (getCookie("firstopen") === version) {
         closeNav()
+    }else if (!(getCookie("firstopen") === "")) {
+        openTab('changelog')
     }
 
     backgroundindex = backgroundlist.indexOf(getCookie("background"))
