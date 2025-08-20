@@ -1,4 +1,4 @@
-var version = "1.1.0"
+var version = "1.1.1"
 
 function getRandomItem(arr) {
     const index = Math.floor(Math.random() * arr.length);
@@ -901,7 +901,7 @@ function generate() {
 
 
 
-    if (getRandomInt(4) === 1) { //1 in number chance to add an "ending"
+    if (getRandomInt(8) === 1) { //1 in number chance to add an "ending"
         message = message.concat("<br>" + getRandomItem(end))
     }
 
@@ -943,10 +943,12 @@ function generate() {
 
         if (message.includes("[lownumber]")) {
             var lownumber = getRandomInt(5)+1
-            message = message.replace("[lownumber]", lownumber)
-            if (lownumber === 1) {
-                message = message.replace("rounds", "round")
+            if (message.includes("Destroyed in <span class='orange-text'>[lownumber]</span> rounds")) {
+                if (lownumber === 1) {
+                    message = message.replace("Destroyed in <span class='orange-text'>[lownumber]</span> rounds", "Destroyed in <span class='orange-text'>[lownumber]</span> round")
+                }
             }
+            message = message.replace("[lownumber]", lownumber)
         }
         //message = message.replace("[multnumber]", getRandomInt(16)+1)
         //message = message.replace("[chipsnumber]", getRandomInt(31)+4)
@@ -1219,9 +1221,6 @@ function generate() {
         var raritycolorshadow = "#a59042"
         var raritytextshadow = "#a59042" 
     }
-    if (document.getElementById("fusions").checked) {
-        message = message.concat("<br><span class='inactive-text'>(" + pickrandomjoker() + " + " + pickrandomjoker() + ")</span>")
-    }
 
     if ((changehand > 1 || changerank > 1 || changesuit > 1 || changetag > 1) && getRandomInt(100) > 40) {
         var multiplechanges = 0
@@ -1293,6 +1292,9 @@ function generate() {
 
 
         message = message.concat(changeextension)
+    }
+    if (document.getElementById("fusions").checked) {
+        message = message.concat("<br><span class='inactive-text'>(" + pickrandomjoker() + " + " + pickrandomjoker() + ")</span>")
     }
 
     document.getElementById("jokertext").innerHTML = "<h1>" + message + "</h1>"
