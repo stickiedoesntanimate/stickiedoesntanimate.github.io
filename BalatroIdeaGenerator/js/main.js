@@ -1577,7 +1577,7 @@ function reportbug() {
     window.open("https://github.com/stickiedoesntanimate/stickiedoesntanimate.github.io/issues/new", "_blank", "noopener noreferrer");
 }
 function suggest() {
-    window.open("https://discord.com/channels/@me/881705806146445362", "_blank", "noopener noreferrer");
+    window.open("https://discord.com/channels/1116389027176787968/1407780956609450099", "_blank", "noopener noreferrer");
 }
 
 const backgroundlist = [
