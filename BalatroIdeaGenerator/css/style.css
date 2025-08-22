@@ -154,6 +154,12 @@ p {
 .polymino-text {
     color: #4fb661;
 }
+.divine-text {
+    color: #7295da;
+}
+.black-market-text {
+    color: #000000;
+}
 
 /* unvisited link */
 a:link {

@@ -1,4 +1,4 @@
-var version = "1.1.1"
+var version = "1.1.2"
 
 function getRandomItem(arr) {
     const index = Math.floor(Math.random() * arr.length);
@@ -113,6 +113,9 @@ function getCookie(cname) {
   return "";
 }
 function pickrandomjoker() {
+    //  ^(?!.*\bname\s*=\s*").*\r?\n?
+    //  ^.*\bname\s*=\s*"([^"]+)".*$     -   "$1",
+
     const jokers = [
         "Joker", "Greedy Joker", "Lusty Joker", "Wrathful Joker", "Gluttonous Joker",
         "Jolly Joker", "Zany Joker", "Mad Joker", "Crazy Joker", "Droll Joker",
@@ -476,6 +479,63 @@ function pickrandomjoker() {
         "Roy G. Biv",
         "Rigoletto",
     ]
+    const visibilityjokers = [
+        "Atom",
+        "Brick up",
+        "Echo Chamber",
+        "Ghost Print",
+        "Job Application",
+        "Stoner Joker",
+        "Unemployed Joker",
+        "Gambling Addict",
+        "3D Glasses",
+        "Biker",
+        "Poker Face",
+        "Garrab",
+        "Standard SD Card",
+        "The Cooler SD Card",
+        "Crystal Geode",
+        "Atomic Bomb",
+        "Alternate",
+        "Caution Sign",
+        "P.A.M.A.",
+        "Wholesale Card",
+        "RV Lab",
+        "Monolith",
+        "Oops all.. hold on-",
+        "Living Card",
+        "Building Bricks Joker",
+        "Middle of Nowhere",
+        "All eyes on you",
+        "Creamer",
+        "Teto",
+        "Offbrand Yogurt",
+        "Cosplayer",
+        "Conquian",
+        "Forged Joker",
+        "Carnation",
+        "The Totem",
+        "Party Noob",
+        "Golbo",
+        "Conspiracy Theorist",
+        "Minuteman",
+        "9 Ball",
+        "Handicap Parking",
+        "Delirious",
+        "Blackbeard",
+        "Charlie",
+        "Impact Frame",
+        "Dogs Playing Russian Roulette",
+        "Plastic Joker",
+        "Flat Earth",
+        "Playing Piece",
+        "Insomnia",
+        "Graffiti",
+        "Comprehensive Notebook",
+        "Handheld Joker",
+        "Slothful Joker",
+        "Envious Joker"
+    ]
     const jokerstopick = [
         "Vanilla"
     ]
@@ -488,6 +548,9 @@ function pickrandomjoker() {
     }
     if (document.getElementById("bunco").checked) {
         jokerstopick.push("Bunco")
+    }
+    if (document.getElementById("visibility").checked) {
+        jokerstopick.push("Visibility")
     }
 
 
@@ -502,6 +565,9 @@ function pickrandomjoker() {
     } else if (jokerpicked === "Cryptid") {
         jokerpicked = getRandomItem(cryptidjokers)
         jokerpicked = '<a target="_blank" rel="noopener noreferrer" href="https://balatromods.miraheze.org/wiki/Cryptid/' + linkify(jokerpicked) + '">' + jokerpicked + '</a>'
+    } else if (jokerpicked === "Visibility") {
+        jokerpicked = getRandomItem(visibilityjokers)
+        jokerpicked = '<a target="_blank" rel="noopener noreferrer" href="https://balatromods.miraheze.org/wiki/Visibility/Jokers">' + jokerpicked + '</a>'
     } else if (jokerpicked === "Bunco") {
         jokerpicked = getRandomItem(buncojokers)
         if ((jokerpicked === "Cassette (A Side)") || (jokerpicked === "Cassette (B Side)")) { //A and B side dont have seperate wiki entries
@@ -663,7 +729,16 @@ const bunco = [
     "Cracker", "Copper"
 ]
 const visibility = [
+    "Brick", "Table Cloth", "Notebook", "Plastic",
 
+    "Calamity", "Chaos", "Denial", "Desideratum",
+    "Hamsa", "Mortal", "Pact", "Spire", "Vault",
+
+    "Impactor", "Arrokoth",
+
+    "Foresight", "Divine", "Black Market",
+
+    "Industrialization", "Heavyweight"
 ]
 const pokermon = [
 
@@ -702,9 +777,35 @@ function changebuttonstates() {
 function initvisibility() {
     changebuttonstates()
     if (document.getElementById("visibility").checked) {
+        cardtype.push("Brick"), cardtype.push("Table Cloth"), cardtype.push("Notebook"), cardtype.push("Plastic")
+        mid.push("create a <span class='divine-text'><a target='_blank' rel='noopener noreferrer' href='https://balatromods.miraheze.org/wiki/Visibility/Divine_Cards'>Divine</a></span> card<br><span class='inactive-text'>(Must have room)</span>")
+        mid.push("create a <span class='black-market-text'><a target='_blank' rel='noopener noreferrer' href='https://balatromods.miraheze.org/wiki/Visibility/Black_Market_Cards'>Black Market</a></span> card<br><span class='inactive-text'>(Must have room)</span>")
+
+
+        spectral.push("Calamity"), spectral.push("Chaos"), spectral.push("Denial"), spectral.push("Desideratum")
+        spectral.push("Hamsa"), spectral.push("Mortal"), spectral.push("Pact"), spectral.push("Spire"), spectral.push("Vault")
+
+        planet.push("Impactor"), planet.push("Arrokoth")
+
+        tag.push("Foresight"), tag.push("Divine"), tag.push("Black Market")
+
+        hand.push("Industrialization"), hand.push("Heavyweight")
 
     } else { //remove things\
 
+        removefrom("Brick", cardtype), removefrom("Table Cloth", cardtype), removefrom("Notebook", cardtype), removefrom("Plastic", cardtype)
+
+        removefrom("create a <span class='divine-text'><a target='_blank' rel='noopener noreferrer' href='https://balatromods.miraheze.org/wiki/Visibility/Divine_Cards'>Divine</a></span> card<br><span class='inactive-text'>(Must have room)</span>", mid)
+        removefrom("create a <span class='black-market-text'><a target='_blank' rel='noopener noreferrer' href='https://balatromods.miraheze.org/wiki/Visibility/Black_Market_Cards'>Black Market</a></span> card<br><span class='inactive-text'>(Must have room)</span>", mid)
+
+        removefrom("Calamity", spectral), removefrom("Chaos", spectral), removefrom("Denial", spectral), removefrom("Desideratum", spectral)
+        removefrom("Hamsa", spectral), removefrom("Mortal", spectral), removefrom("Pact", spectral), removefrom("Spire", spectral), removefrom("Vault", spectral)
+
+        removefrom("Impactor", planet), removefrom("Arrokoth", planet)
+
+        removefrom("Foresight", tag), removefrom("Divine", tag), removefrom("Black Market", tag)
+
+        removefrom("Industrialization", hand), removefrom("Heavyweight", hand)
     }
 }
 function initbunco() {
@@ -800,7 +901,7 @@ function initpaperback() {
 
         cardtype.push("Soaked"), cardtype.push("Ceramic"), cardtype.push("Wrapped"), cardtype.push("Bandaged"), cardtype.push("Domino"), cardtype.push("Stained")
 
-        mid.push("create a <span class='minorarcana-text'><a target='_blank' rel='noopener noreferrer' href='https://balatromods.miraheze.org/wiki/Paperback/Minor_Arcana_Cards'>Minor Arcana</a></span> card")
+        mid.push("create a <span class='minorarcana-text'><a target='_blank' rel='noopener noreferrer' href='https://balatromods.miraheze.org/wiki/Paperback/Minor_Arcana_Cards'>Minor Arcana</a></span> card<br><span class='inactive-text'>(Must have room)</span>")
     } else { //remove things
         removefrom("<span class='crown-text'><a target='_blank' rel='noopener noreferrer' href='https://balatromods.miraheze.org/wiki/Paperback/Suits'>Crown", suit)
         removefrom("<span class='star-text'><a target='_blank' rel='noopener noreferrer' href='https://balatromods.miraheze.org/wiki/Paperback/Suits'>Star", suit)
@@ -823,7 +924,7 @@ function initpaperback() {
             removefrom("Spectrum Five", hand)
         }
         
-        removefrom("create a <span class='minorarcana-text'><a target='_blank' rel='noopener noreferrer' href='https://balatromods.miraheze.org/wiki/Paperback/Minor_Arcana_Cards'>Minor Arcana</a></span> card", mid)
+        removefrom("create a <span class='minorarcana-text'><a target='_blank' rel='noopener noreferrer' href='https://balatromods.miraheze.org/wiki/Paperback/Minor_Arcana_Cards'>Minor Arcana</a></span> card<br><span class='inactive-text'>(Must have room)</span>", mid)
 
         removefrom("Soaked", cardtype), removefrom("Ceramic", cardtype), removefrom("Wrapped", cardtype), removefrom("Bandaged", cardtype), removefrom("Domino", cardtype), removefrom("Stained", cardtype)
     }
@@ -857,7 +958,7 @@ function initcryptid() {
         rarities.push("Exotic"), rarityweights.push(5)
         rarities.push("Cursed"), rarityweights.push(3)
 
-        mid.push("create a <span class='code-text'><a target='_blank' rel='noopener noreferrer' href='https://balatromods.miraheze.org/wiki/Cryptid/Code_Cards'>Code</a></span> card")
+        mid.push("create a <span class='code-text'><a target='_blank' rel='noopener noreferrer' href='https://balatromods.miraheze.org/wiki/Cryptid/Code_Cards'>Code</a></span> card<br><span class='inactive-text'>(Must have room)</span>")
         cardtype.push("Echo"), cardtype.push("Light"), cardtype.push("Abstract")
     } else { //remove things
         removefrom("Bulwark", hand)
@@ -879,7 +980,7 @@ function initcryptid() {
 
         removefrom("Eclipse", tarot), removefrom("Seraph", tarot), removefrom("Instability", tarot), removefrom("Blessing", tarot), removefrom("Automaton", tarot)
 
-        removefrom("create a <span class='code-text'><a target='_blank' rel='noopener noreferrer' href='https://balatromods.miraheze.org/wiki/Cryptid/Code_Cards'>Code</a></span> card", mid)
+        removefrom("create a <span class='code-text'><a target='_blank' rel='noopener noreferrer' href='https://balatromods.miraheze.org/wiki/Cryptid/Code_Cards'>Code</a></span> card<br><span class='inactive-text'>(Must have room)</span>", mid)
 
         removerarity("Candy"), removerarity("Epic"), removerarity("Exotic"), removerarity("Cursed")
         removefrom("Echo", cardtype), removefrom("Light", cardtype), removefrom("Abstract", cardtype)
@@ -1024,6 +1125,8 @@ function generate() {
                 message = message.replace("[hand]", (getArticle(handpicked) + " " + '<span class="orange-text"><a target="_blank" rel="noopener noreferrer" href="https://balatromods.miraheze.org/wiki/Paperback/Poker_Hands">'+ handpicked + '</a></span>'))
             } else if (cryptid.includes(handpicked)) {
                 message = message.replace("[hand]", (getArticle(handpicked) + " " + '<span class="orange-text"><a target="_blank" rel="noopener noreferrer" href="https://balatromods.miraheze.org/wiki/Cryptid/Poker_Hands">'+ handpicked + '</a></span>'))
+            } else if (visibility.includes(handpicked)) {
+                message = message.replace("[hand]", (getArticle(handpicked) + " " + '<span class="orange-text"><a target="_blank" rel="noopener noreferrer" href="https://balatromods.miraheze.org/wiki/Visibility/Poker_Hands">'+ handpicked + '</a></span>'))
             } else {
                 message = message.replace("[hand]", (getArticle(handpicked) + " " + '<span class="orange-text"><a target="_blank" rel="noopener noreferrer" href="https://balatrowiki.org/w/Poker_Hands">'+ handpicked + '</a></span>'))
             }
@@ -1040,6 +1143,8 @@ function generate() {
                 message = message.replace("[acardtype]", (getArticle(cardtypepicked) + " " + '<span class="orange-text"><a target="_blank" rel="noopener noreferrer" href="https://balatromods.miraheze.org/wiki/Paperback/Card_Modifiers">'+ cardtypepicked + ' Card</a></span>'))
             } else if (cryptid.includes(cardtypepicked)) {
                 message = message.replace("[acardtype]", (getArticle(cardtypepicked) + " " + '<span class="orange-text"><a target="_blank" rel="noopener noreferrer" href="https://balatromods.miraheze.org/wiki/Cryptid/Card_Modifiers">'+ cardtypepicked + ' Card</a></span>'))
+            } else if (visibility.includes(cardtypepicked)) {
+                message = message.replace("[acardtype]", (getArticle(cardtypepicked) + " " + '<span class="orange-text"><a target="_blank" rel="noopener noreferrer" href="https://balatromods.miraheze.org/wiki/Visibility/Card_Modifiers">'+ cardtypepicked + ' Card</a></span>'))
             } else if (bunco.includes(cardtypepicked)) {
                 message = message.replace("[acardtype]", (getArticle(cardtypepicked) + " " + '<span class="orange-text"><a target="_blank" rel="noopener noreferrer" href="https://balatromods.miraheze.org/wiki/Bunco/Card_Modifiers">'+ cardtypepicked + ' Card</a></span>'))
             } else {
@@ -1052,6 +1157,8 @@ function generate() {
                 message = message.replace("[cardtype]", (' <span class="orange-text"><a target="_blank" rel="noopener noreferrer" href="https://balatromods.miraheze.org/wiki/Paperback/Card_Modifiers">'+ cardtypepicked + ' Card</a></span>'))
             } else if (cryptid.includes(cardtypepicked)) {
                 message = message.replace("[cardtype]", (' <span class="orange-text"><a target="_blank" rel="noopener noreferrer" href="https://balatromods.miraheze.org/wiki/Cryptid/Card_Modifiers">'+ cardtypepicked + ' Card</a></span>'))
+            } else if (visibility.includes(cardtypepicked)) {
+                message = message.replace("[cardtype]", (' <span class="orange-text"><a target="_blank" rel="noopener noreferrer" href="https://balatromods.miraheze.org/wiki/Visibility/Card_Modifiers">'+ cardtypepicked + ' Card</a></span>'))
             } else if (bunco.includes(cardtypepicked)) {
                 message = message.replace("[cardtype]", (' <span class="orange-text"><a target="_blank" rel="noopener noreferrer" href="https://balatromods.miraheze.org/wiki/Bunco/Card_Modifiers">'+ cardtypepicked + ' Card</a></span>'))
             } else {
@@ -1099,7 +1206,9 @@ function generate() {
                 var planetpicked = getRandomItem(planet)
                 if (cryptid.includes(planetpicked)) {
                     message = message.replace("[planet]", (getArticle(planetpicked) + " " + '<span class="planet-text"><a target="_blank" rel="noopener noreferrer" href="https://balatromods.miraheze.org/wiki/Cryptid/Planet_Cards">' + planetpicked + '</a></span>'))
-                } else if (paperback.includes(planetpicked)) {
+                } else if (visibility.includes(planetpicked)) {
+                    message = message.replace("[planet]", (getArticle(planetpicked) + " " + '<span class="planet-text"><a target="_blank" rel="noopener noreferrer" href="https://balatromods.miraheze.org/wiki/Visibility/Planet_Cards">' + planetpicked + '</a></span>'))
+                }else if (paperback.includes(planetpicked)) {
                     if (document.getElementById("bunco").checked) {//buncos wiki has priority
                         message = message.replace("[planet]", (getArticle(planetpicked) + " " + '<span class="planet-text"><a target="_blank" rel="noopener noreferrer" href="https://balatromods.miraheze.org/wiki/Bunco/Planet_Cards">'+ planetpicked + ' </a></span>'))
                     }
@@ -1124,7 +1233,9 @@ function generate() {
                     message = message.replace("[spectral]", (getArticle(spectralpicked) + " " + '<span class="spectral-text"><a target="_blank" rel="noopener noreferrer" href="https://balatromods.miraheze.org/wiki/Cryptid/Spectral_Cards">' + spectralpicked + '</a></span>'))
                 } else if (bunco.includes(spectralpicked)) {
                     message = message.replace("[spectral]", (getArticle(spectralpicked) + " " + '<span class="spectral-text"><a target="_blank" rel="noopener noreferrer" href="https://balatromods.miraheze.org/wiki/Bunco/Spectral_Cards">' + spectralpicked + '</a></span>'))
-                } else {
+                } else if (visibility.includes(spectralpicked)) {
+                    message = message.replace("[spectral]", (getArticle(spectralpicked) + " " + '<span class="spectral-text"><a target="_blank" rel="noopener noreferrer" href="https://balatromods.miraheze.org/wiki/Visibility/Spectral_Cards">' + spectralpicked + '</a></span>'))
+                }else {
                     message = message.replace("[spectral]", (getArticle(spectralpicked) + " " + '<span class="spectral-text"><a target="_blank" rel="noopener noreferrer" href="' + vanillalinkify(spectralpicked)+ '">' + spectralpicked + '</a></span>'))
                 }
             }
@@ -1139,7 +1250,9 @@ function generate() {
 
                 } else if (bunco.includes(tagpicked)) {
                     message = message.replace("[tag]", (getArticle(tagpicked) + " " + '<span class="orange-text"><a target="_blank" rel="noopener noreferrer" href="https://balatromods.miraheze.org/wiki/Bunco/Tags">'+ tagpicked + ' Tag</a></span>'))
-                } else if (cryptid.includes(tagpicked)) {
+                } else if (visibility.includes(tagpicked)) {
+                    message = message.replace("[tag]", (getArticle(tagpicked) + " " + '<span class="orange-text"><a target="_blank" rel="noopener noreferrer" href="https://balatromods.miraheze.org/wiki/Visibility/Tags">'+ tagpicked + ' Tag</a></span>'))
+                }else if (cryptid.includes(tagpicked)) {
 
                     if (tagpicked === "Loss") { //Loss Doesnt have the "tag" text
                         message = message.replace("[tag]", (getArticle(tagpicked) + " " + '<span class="orange-text"><a target="_blank" rel="noopener noreferrer" href="https://balatromods.miraheze.org/wiki/Cryptid/Tags">'+ tagpicked + '</a></span>'))
@@ -1176,22 +1289,22 @@ function generate() {
         var rarity = weightedRandom(rarities, rarityweights)
     }
     if (rarity === "Common") {
-        var raritytext = "Common"
+        var raritytext = "<a target='_blank' rel='noopener noreferrer' href='https://balatrowiki.org/w/Common_Jokers'>Common</a>"
         var raritycolor = "#0093FF"
         var raritycolorshadow = "#005cab"
         var raritytextshadow = "#1e547c" 
     } else if (rarity === "Uncommon") {
-        var raritytext = "Uncommon"
+        var raritytext = "<a target='_blank' rel='noopener noreferrer' href='https://balatrowiki.org/w/Uncommon_Jokers'>Uncommon</a>"
         var raritycolor = "#35bd86"
         var raritycolorshadow = "#1b7954"
         var raritytextshadow = "#32644f" 
     } else if (rarity === "Rare") {
-        var raritytext = "Rare"
+        var raritytext = "<a target='_blank' rel='noopener noreferrer' href='https://balatrowiki.org/w/Rare_Jokers'>Rare</a>"
         var raritycolor = "#ff4c40"
         var raritycolorshadow = "#a92b23" 
         var raritytextshadow = "#7c3a36" 
     } else if (rarity === "Legendary") {
-        var raritytext = "Legendary"
+        var raritytext = "<a target='_blank' rel='noopener noreferrer' href='https://balatrowiki.org/w/Legendary_Jokers'>Legendary</a>"
         var raritycolor = "#ab5bb5" 
         var raritycolorshadow = "#6d3574"
         var raritytextshadow = "#5d4061" 
