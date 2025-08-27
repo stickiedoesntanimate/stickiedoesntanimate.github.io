@@ -5,6 +5,9 @@
 * {
     font-variant-emoji: text;
 }
+img {
+    image-rendering: pixelated;
+}
 
 body {
     width: 100%;
@@ -30,7 +33,7 @@ html {
 h1 {
     color: #3f4a4d;
     font-family: Balala;
-    font-size: 48px;
+    font-size: 40px;
     letter-spacing: 2px;
     margin: 0;
 }
@@ -45,10 +48,9 @@ h2 {
 
 .square {
     border-radius: 25px;
-    height: 80%;
     background-color: #3f4a4d;
     margin: auto;
-    width: 70%;
+    width: 75%;
     border: 6px solid #dee2ea;
     padding: 10px;
     box-shadow: 0px 7px #ababab;
@@ -86,6 +88,7 @@ h3 {
     margin-bottom: 10px;
     margin-left: auto;
     margin-right: auto;
+    min-width: 30%;
 }
 
 .raritytext {
@@ -220,7 +223,8 @@ a:hover {
 .container {
   display: block;
   position: relative;
-  padding-left: 40px;
+  padding-left: 43px;
+  padding-top: 6px;
   margin-bottom: 12px;
   cursor: pointer;
   font-size: 30px;
@@ -305,11 +309,7 @@ a:hover {
     font-family: Balala;
     padding-top: 3px;
 } 
-    
-.btn:hover .btn-slide-show-text1 {
-    margin-left: 65px;
-} 
-    
+
 .btn-layered-3d:before {
     box-sizing: border-box;
 } 
@@ -660,4 +660,34 @@ a:hover {
     margin-top: 15px;
     padding: 0px;
     text-shadow: 0px 4px 0px #a22d2f;
+}
+
+.jokerimages {
+    width: auto;
+    margin:auto;
+    position: relative;
+    padding-top: 5px;
+
+}
+.jokerbg {
+  margin: 0 auto;
+  display: block;
+  float: none; 
+  margin-top: 5px;
+  margin-bottom: 20px;
+}
+
+.jokerfg {
+  border: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  filter: hue-rotate(0deg);
+ } 
+
+.settingsgrid {
+    display: grid;
+    grid-template-columns: auto auto;
+    row-gap: 20px;
 }

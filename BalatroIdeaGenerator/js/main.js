@@ -1,4 +1,4 @@
-var version = "1.1.2"
+var version = "1.2.0"
 
 function getRandomItem(arr) {
     const index = Math.floor(Math.random() * arr.length);
@@ -22,6 +22,7 @@ function checkOccurrences(str, substr) {
 
   return count
 }
+
 
 function getArticle(word) {
 
@@ -66,8 +67,8 @@ function removefrom(thing, array) {
 }
 function removerarity(raritytoremove) {
     var index = rarities.indexOf(raritytoremove);
-    if (index > -1) { // only splice array when item is found
-        rarityweights.splice(index, 1); // 2nd parameter means remove one item only
+    if (index > -1) {
+        rarityweights.splice(index, 1);
     }
     removefrom(raritytoremove, rarities)
 }
@@ -239,7 +240,7 @@ function pickrandomjoker() {
         "Effarcire",
         "Energia",
         "Ace Aequilibrium",
-        "{C:red}ERR{}{C:dark_edition}O{}{C:red}R{}",
+        "<span class='mult-text'>ERR</span><span class='black-market-text'>O</span><span class='mult-text'>R</span>",
         "Eternal Flame",
         "Exoplanet",
         "Exponentia",
@@ -581,12 +582,174 @@ function pickrandomjoker() {
     return jokerpicked
 }
 
+const jokerfg = [
+    "cola",
+    "egg",
+    "even",
+    "joker",
+    "odd",
+    "sin",
+    "burger",
+    "chef",
+    "tall",
+    "bouo",
+    "octo",
+    "solid",
+    "chaos",
+    "andy",
+    "burglar",
+    "cardsharp",
+    "fortune",
+    "8ball",
+    "zany",
+    "marble",
+    "bones",
+    "spaceman",
+    "showman",
+    "swash",
+    "flower",
+    "scholar",
+    "dice",
+    "hand",
+    "stuntman",
+    "banana",
+    "invis",
+    "throwback",
+    "idol",
+    "canio",
+    "tribulet",
+    "yorick",
+    "chicot",
+    "perkeo",
+    "runner",
+    "icecream",
+    "blue",
+    "6sense",
+    "hiker",
+    "green",
+    "square",
+    "vampire",
+    "vagabond",
+    "baron",
+    "mask",
+    "luchador",
+    "bean",
+    "devious",
+    "cat",
+    "bull",
+    "popcorn",
+    "ramen",
+    "pants",
+    "smile",
+    "walkie"
+]
+const jokerbg = [
+    "gemstone",
+    "gradientdark",
+    "gradientlight",
+    "jimbotiles",
+    "tetris",
+    "white",
+    "window",
+    "bubbles",
+    "fog",
+    "order",
+    "tarot",
+    "nebula",
+    "suits",
+    "90s",
+    "michel",
+    "blackboard",
+    "nebula2",
+    "clouds",
+    "midas",
+    "cola",
+    "smiley",
+    "plaid",
+    "pulse",
+    "web",
+    "stage",
+    "blueprint",
+    "swirl",
+    "purplemist",
+    "cloth",
+    "dots",
+    "curvedlines",
+    "burnt",
+    "napkin",
+    "earth",
+    "boots",
+    "superposition",
+    "list",
+    "baseball",
+    "flash",
+    "ancient"
+]
+const lowshift = [
+    "cola",
+    "egg",
+    "jimbotiles",
+    "tetris",
+    "burger",
+    "joker",
+    "tall",
+    "nebula2",
+    "nebula",
+    "octo",
+    "fortune",
+    "hiker",
+    "bull",
+    "icecream",
+    "chaos",
+    "popcorn",
+    "ramen",
+    "square",
+    "vagabond",
+    "idol"
+]
+function changejokerimages(rarity) {
+    var regularshiftmount = 360
+    var lowshiftamount = 50
+    var fgchosen = getRandomItem(jokerfg)
+
+    while ((document.getElementById("jokerfg").src).replace(/.+(?=\bjokers\b)/g, "") === "jokers/main/" + fgchosen + ".png") { //force it to change
+        fgchosen = getRandomItem(jokerfg)
+    }
+
+
+    document.getElementById("jokerfg").src="./BalatroIdeaGenerator/assets/jokers/main/" + fgchosen + ".png"
+
+    if (lowshift.includes(fgchosen)) {
+        document.getElementById("jokerfg").style.filter="hue-rotate(" + (getRandomInt(lowshiftamount) - (lowshiftamount / 2)) + "deg)"
+    } else {
+        document.getElementById("jokerfg").style.filter="hue-rotate(" + (getRandomInt(regularshiftmount) - (regularshiftmount / 2)) + "deg)"
+    }
+
+    var bgchosen = getRandomItem(jokerbg)
+
+
+    if (rarity === "Legendary") {
+        bgchosen = "legend"
+    } else {
+        while ((document.getElementById("jokerbg").src).replace(/.+(?=\bjokers\b)/g, "") === "jokers/background/" + bgchosen + ".png") { //force it to change
+            bgchosen = getRandomItem(jokerbg)
+        }
+    }
+
+    document.getElementById("jokerbg").src="./BalatroIdeaGenerator/assets/jokers/background/" + bgchosen + ".png"
+
+    if (lowshift.includes(bgchosen)) {
+        document.getElementById("jokerbg").style.filter="hue-rotate(" + (getRandomInt(lowshiftamount) - (lowshiftamount / 2)) + "deg)"
+    } else {
+        document.getElementById("jokerbg").style.filter="hue-rotate(" + (getRandomInt(regularshiftmount) - (regularshiftmount / 2)) + "deg)"
+    }
+}
 
 const start = [
     "On the first hand",
     "On the last hand",
     "If played hand contains [containinghand]",
-    "If played hand contains [arank]", //todo: choose 1, 2, or 3 ranks
+    "If played hand contains [arank]",
     "If played hand contains [arank] of [suitp]",
     "If played hand is [hand]", //choose hand type (3oak, flush, etc)
     "If played hand has exactly <span class='orange-text'>" + (getRandomInt(3)+2) + "</span> cards",
@@ -609,10 +772,12 @@ const independentstart =[
     "When a <span class='orange-text'><a target='_blank' rel='noopener noreferrer' href='https://balatrowiki.org/w/Booster_Packs'>Booster Pack</a></span> is skipped,",
     "When a <span class='orange-text'><a target='_blank' rel='noopener noreferrer' href='https://balatrowiki.org/w/Booster_Packs'>Booster Pack</a></span> is opened,",
     "When a card is added to your deck,",
-    //"When a card changes <span class='orange-text'><a target='_blank' rel='noopener noreferrer' href='https://balatrowiki.org/w/Card_Modifiers#Enhanced_Cards'>Enhancement</a></span>,",
     "When a card is sold,",
     "When the <span class='orange-text'><a target='_blank' rel='noopener noreferrer' href='https://balatrowiki.org/w/Blinds_and_Antes#Boss_Blind'>Boss Blind</a></span> is defeated,",
     "When <span class='orange-text'><a target='_blank' rel='noopener noreferrer' href='https://balatrowiki.org/w/Blinds_and_Antes'>Blind</a></span> is selected,",
+    "At the end of the round,",
+    "At the end of the <span class='orange-text'><a target='_blank' rel='noopener noreferrer' href='https://balatrowiki.org/w/The_Shop'>shop</a></span>,",
+    "When round begins,",
 ]
 
 const mid = [
@@ -623,9 +788,6 @@ const mid = [
     "create a random <span class='orange-text'>Joker</span>",
     "create [tag]",
     "add [acardtype] to the deck",
-    //"this Joker gains X[lownumber] [multorchips]",
-    //"this Joker gains <span class='mult-text'>+[multnumber]</span> Mult",
-    //"this Joker gains <span class='chips-text'>+[chipsnumber]</span> Chips",
 ]
 
 const end = [
@@ -634,8 +796,10 @@ const end = [
 ]
 
 const suit = [
-    "<span class='spade-text'>Spade", "<span class='club-text'>Club",
-    "<span class='heart-text'>Heart", "<span class='diamond-text'>Diamond",
+    "<span class='spade-text'>'<a target='_blank' rel='noopener noreferrer' href='https://balatrowiki.org/w/Card_Suits'>Spade",
+    "<span class='club-text'><a target='_blank' rel='noopener noreferrer' href='https://balatrowiki.org/w/Card_Suits'>Club",
+    "<span class='heart-text'><a target='_blank' rel='noopener noreferrer' href='https://balatrowiki.org/w/Card_Suits'>Heart",
+    "<span class='diamond-text'><a target='_blank' rel='noopener noreferrer' href='https://balatrowiki.org/w/Card_Suits'>Diamond",
 ]
 const rank = [
     "2", "3", "4", "5", "6", "7", "8", "9", "10", "Jack", "Queen", "King", "Ace",
@@ -1051,8 +1215,6 @@ function generate() {
             }
             message = message.replace("[lownumber]", lownumber)
         }
-        //message = message.replace("[multnumber]", getRandomInt(16)+1)
-        //message = message.replace("[chipsnumber]", getRandomInt(31)+4)
 
         if (message.includes("[suit]")) {
             var suitpicked = getRandomItem(suit)
@@ -1067,7 +1229,7 @@ function generate() {
             if (paperback.includes(suitpicked) || bunco.includes(suitpicked)) {
                 message = message.replace("[suit]",(suitpicked + "</a></span>"))
             } else {//</a>
-                message = message.replace("[suit]",(suitpicked + "</span>"))
+                message = message.replace("[suit]",(suitpicked + "</a></span>"))
             }
             if (changesuit === 1) {
                 changesuit = 2
@@ -1089,7 +1251,7 @@ function generate() {
             if (paperback.includes(suitpicked) || bunco.includes(suitpicked)) {
                 message = message.replace("[suitp]",(suitpicked + "s</a></span>"))
             } else {//</a>
-                message = message.replace("[suitp]",(suitpicked + "s</span>"))
+                message = message.replace("[suitp]",(suitpicked + "s</a></span>"))
             }
             if (changesuit === 1) {
                 changesuit = 2
@@ -1187,13 +1349,13 @@ function generate() {
                 }
             }
             if (paperback.includes(rankchosen)) {
-                message = message.replace("[arank]", (getArticle(rankchosen) + '<span class="orange-text"><a target="_blank" rel="noopener noreferrer" href="https://balatromods.miraheze.org/wiki/Paperback#Ranks"> '+ rankchosen + '</a></span>'))
+                message = message.replace("[arank]", (getArticle(rankchosen) + ' <span class="orange-text"><a target="_blank" rel="noopener noreferrer" href="https://balatromods.miraheze.org/wiki/Paperback#Ranks">'+ rankchosen + '</a></span>'))
                 message = message.replace("[rank]", ('<span class="orange-text"><a target="_blank" rel="noopener noreferrer" href="https://balatromods.miraheze.org/wiki/Paperback#Ranks">'+ rankchosen + '</a></span>'))
                 message = message.replace("[rankp]", ('<span class="orange-text"><a target="_blank" rel="noopener noreferrer" href="https://balatromods.miraheze.org/wiki/Paperback#Ranks">'+ rankchosen + "s" + '</a></span>'))
             } else {
-                message = message.replace("[arank]", (getArticle(rankchosen) + '<span class="orange-text"> '+ rankchosen + '</span>'))
-                message = message.replace("[rank]", ('<span class="orange-text">'+ rankchosen + '</span>'))
-                message = message.replace("[rankp]", ('<span class="orange-text">'+ rankchosen + "s" + '</span>'))
+                message = message.replace("[arank]", (getArticle(rankchosen) + ' <span class="orange-text"><a target="_blank" rel="noopener noreferrer" href="https://balatrowiki.org/w/Card_Ranks">'+ rankchosen + '</a></span>'))
+                message = message.replace("[rank]", ('<span class="orange-text"><a target="_blank" rel="noopener noreferrer" href="https://balatrowiki.org/w/Card_Ranks">'+ rankchosen + '</a></span>'))
+                message = message.replace("[rankp]", ('<span class="orange-text"><a target="_blank" rel="noopener noreferrer" href="https://balatrowiki.org/w/Card_Ranks">'+ rankchosen + "s" + '</a></span>'))
             }
             if (changerank === 1) {
                 changerank = 2
@@ -1418,6 +1580,8 @@ function generate() {
     document.getElementById("raritycolorclass").style.boxShadow = '0px 7px' + raritycolorshadow
 
     document.getElementById("raritytext").style.textShadow = '0px 4px' + raritytextshadow
+
+    changejokerimages(rarity)
 
     // console.log(message)
 }
@@ -1666,6 +1830,13 @@ function closeNav() {
   document.getElementById("myNav").style.display = "none";
   document.cookie = "firstopen=" + version;
 }
+function disableimage() {
+    if (document.getElementById("disableimage").checked) {
+        document.getElementById("jokerimages").style.display = "none";
+    } else {
+        document.getElementById("jokerimages").style.display = "block";
+    }
+}
 
 function clearcookies() {
     if (confirm("Are you sure? This page will reload.") == true) {
@@ -1689,7 +1860,7 @@ function openTab(tabName) {
 }
 
 function reportbug() {
-    window.open("https://github.com/stickiedoesntanimate/stickiedoesntanimate.github.io/issues/new", "_blank", "noopener noreferrer");
+    window.open("https://github.com/stickiedoesntanimate/stickiedoesntanimate.github.io", "_blank", "noopener noreferrer");
 }
 function suggest() {
     window.open("https://discord.com/channels/1116389027176787968/1407780956609450099", "_blank", "noopener noreferrer");
@@ -1746,6 +1917,10 @@ window.onload = function() {
             checkboxes[i].checked = true
         }
     }
+    disableimage()
+    document.getElementById("fgjokercount").innerHTML = jokerfg.length
+    document.getElementById("bgjokercount").innerHTML = jokerbg.length + 1 //legendary bg isnt included in the list
+    document.getElementById("combocount").innerHTML = (jokerbg.length + 1) * jokerfg.length
     
 };
 function save() {
