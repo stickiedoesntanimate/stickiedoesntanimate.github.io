@@ -1,0 +1,91 @@
+body {
+    background-color: #2D1E2F;
+}
+.search {
+    position: fixed;
+    width: 100%;
+}
+.searchbar {
+    background-color: #F8F5F4;
+}
+.padder {
+    height: 30px;
+}
+#myInput {
+  font-size: 16px; /* Increase font-size */
+  height: 100%;
+}
+
+#myUL {
+  /* Remove default list styling */
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+#myUL li a {
+  border: 1px solid #b1b1b1; /* Add a border to all links */
+  margin-top: -1px; /* Prevent double borders */
+  background-color: #F8F5F4; /* Grey background color */
+  padding: 3px; /* Add some padding */
+  text-decoration: none; /* Remove default text underline */
+  font-size: 18px; /* Increase the font-size */
+  color: #2D1E2F; /* Add a black text color */
+  display: block; /* Make it into a block element to fill the whole list */
+}
+
+#myUL li a:hover:not(.header) {
+  background-color: #F8F5F4; /* Add a hover effect to all links, except for headers */
+}
+.search {
+    display:grid;
+    grid-template-columns: 4.9fr 1fr 1fr 1fr 1fr 1fr;
+    height: 30;
+    background-color: #2D1E2F;
+    gap: 3px;
+    /* margin-bottom: 3px; */
+}
+.pokemon {
+    display:grid;
+    grid-template-columns: 5fr 1fr 1fr 1fr 1fr 1fr;
+    height: 30;
+    background-color: #2D1E2F;
+    gap: 3px;
+    margin-bottom: 3px;
+}
+.yellow {
+    background-color: #EEE952;
+    height: 100%;
+    text-align: center;
+    font-size: 20px;
+}
+.swshyes {
+    background-color: #88F86E;
+}
+.swshno {
+    background-color: #BA3B46;
+}
+.bdspyes {
+    background-color: #88F86E;
+}
+.bdspno {
+    background-color: #BA3B46;
+}
+.playes {
+    background-color: #88F86E;
+}
+.plano {
+    background-color: #BA3B46;
+}
+.svyes {
+    background-color: #88F86E;
+}
+.svno {
+    background-color: #BA3B46;
+}
+.plzayes {
+    background-color: #88F86E;
+}
+.plzano {
+    background-color: #BA3B46;
+}

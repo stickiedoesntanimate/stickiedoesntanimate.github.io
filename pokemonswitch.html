@@ -1,0 +1,1316 @@
+<!DOCTYPE html>
+<html lang="en-US">
+ 
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>pokemonswitch</title>
+    <link rel="stylesheet" href="pokemonswitch/css/style.css">
+    <!-- <link rel="icon" type="image/x-icon" href="BalatroIdeaGenerator/assets/favicon.png">
+
+    <meta content="Balatro Joker Generator" property="og:title" />
+    <meta content="A Joker generator for Balatro!" property="og:description" />
+    <meta content="https://stickiedoesntanimate.github.io/BalatroIdeaGenerator" property="og:url" />
+    <meta content="#ff4c41" data-react-helmet="true" name="theme-color" /> -->
+
+</head>
+ 
+<body>
+    <div class="search">
+        <input type="text" id="myInput" onkeyup="myFunction()" class="searchbar" placeholder="Search...">
+        <div class="yellow" onclick="changeswsh()" id="swsh">Swsh</div>
+        <div class="yellow" onclick="changebdsp()" id="bdsp">Bdsp</div>
+        <div class="yellow" onclick="changepla()" id="pla">Pla</div>
+        <div class="yellow" onclick="changesv()" id="sv">Sv</div>
+        <div class="yellow" onclick="changeplza()" id="plza">Plza</div>
+    </div>
+    <div class="padder"></div>
+    <ul id="myUL">
+        <li><div class="pokemon"><a class="name">Bulbasaur</a>
+            <div class="swshyes"></div>
+            <div class="bdspyes"></div>
+            <div class="plano"></div>
+            <div class="svyes"></div>
+            <div class="plzayes"></div>
+        </div></li>
+        <li><div class="pokemon"><a class="name">Ivysaur</a>
+            <div class="swshyes"></div>
+            <div class="bdspyes"></div>
+            <div class="plano"></div>
+            <div class="svyes"></div>
+            <div class="plzayes"></div>
+        </div></li>
+        <li><div class="pokemon"><a class="name">Venusaur</a>
+            <div class="swshyes"></div>
+            <div class="bdspyes"></div>
+            <div class="plano"></div>
+            <div class="svyes"></div>
+            <div class="plzayes"></div>
+        </div></li>
+        <li><div class="pokemon"><a class="name">Charmander</a>
+            <div class="swshyes"></div>
+            <div class="bdspyes"></div>
+            <div class="plano"></div>
+            <div class="svyes"></div>
+            <div class="plzayes"></div>
+        </div></li>
+        <li><div class="pokemon"><a class="name">Charmeleon</a>
+            <div class="swshyes"></div>
+            <div class="bdspyes"></div>
+            <div class="plano"></div>
+            <div class="svyes"></div>
+            <div class="plzayes"></div>
+        </div></li>
+        <li><div class="pokemon"><a class="name">Charizard</a>
+            <div class="swshyes"></div>
+            <div class="bdspyes"></div>
+            <div class="plano"></div>
+            <div class="svyes"></div>
+            <div class="plzayes"></div>
+        </div></li>
+        <li><div class="pokemon"><a class="name">Squirtle</a>
+            <div class="swshyes"></div>
+            <div class="bdspyes"></div>
+            <div class="plano"></div>
+            <div class="svyes"></div>
+            <div class="plzayes"></div>
+        </div></li>
+        <li><div class="pokemon"><a class="name">Wartortle</a>
+            <div class="swshyes"></div>
+            <div class="bdspyes"></div>
+            <div class="plano"></div>
+            <div class="svyes"></div>
+            <div class="plzayes"></div>
+        </div></li>
+        <li><div class="pokemon"><a class="name">Blastoise</a>
+            <div class="swshyes"></div>
+            <div class="bdspyes"></div>
+            <div class="plano"></div>
+            <div class="svyes"></div>
+            <div class="plzayes"></div>
+        </div></li>
+        <li><div class="pokemon"><a class="name">Caterpie</a>
+            <div class="swshyes"></div>
+            <div class="bdspyes"></div>
+            <div class="plano"></div>
+            <div class="svno"></div>
+            <div class="plzano"></div>
+        </div></li>
+        <li><div class="pokemon"><a class="name">Metapod</a>
+            <div class="swshyes"></div>
+            <div class="bdspyes"></div>
+            <div class="plano"></div>
+            <div class="svno"></div>
+            <div class="plzano"></div>
+        </div></li>
+        <li><div class="pokemon"><a class="name">Butterfree</a>
+            <div class="swshyes"></div>
+            <div class="bdspyes"></div>
+            <div class="plano"></div>
+            <div class="svno"></div>
+            <div class="plzano"></div>
+        </div></li>
+        <li><div class="pokemon"><a class="name">Weedle</a>
+            <div class="swshno"></div>
+            <div class="bdspyes"></div>
+            <div class="plano"></div>
+            <div class="svno"></div>
+            <div class="plzayes"></div>
+        </div></li>
+        <li><div class="pokemon"><a class="name">Kakuna</a>
+            <div class="swshno"></div>
+            <div class="bdspyes"></div>
+            <div class="plano"></div>
+            <div class="svno"></div>
+            <div class="plzayes"></div>
+        </div></li>
+        <li><div class="pokemon"><a class="name">Beedrill</a>
+            <div class="swshno"></div>
+            <div class="bdspyes"></div>
+            <div class="plano"></div>
+            <div class="svno"></div>
+            <div class="plzayes"></div>
+        </div></li>
+        <li><div class="pokemon"><a class="name">Pidgey</a>
+            <div class="swshno"></div>
+            <div class="bdspyes"></div>
+            <div class="plano"></div>
+            <div class="svno"></div>
+            <div class="plzayes"></div>
+        </div></li>
+        <li><div class="pokemon"><a class="name">Pidgeotto</a>
+            <div class="swshno"></div>
+            <div class="bdspyes"></div>
+            <div class="plano"></div>
+            <div class="svno"></div>
+            <div class="plzayes"></div>
+        </div></li>
+        <li><div class="pokemon"><a class="name">Pidgeot</a>
+            <div class="swshno"></div>
+            <div class="bdspyes"></div>
+            <div class="plano"></div>
+            <div class="svno"></div>
+            <div class="plzayes"></div>
+        </div></li>
+        <li><div class="pokemon"><a class="name">Rattata</a>
+            <div class="swshno"></div>
+            <div class="bdspyes"></div>
+            <div class="plano"></div>
+            <div class="svno"></div>
+            <div class="plzano"></div>
+        </div></li>
+        <li><div class="pokemon"><a class="name">Rattata (Alola)</a>
+            <div class="swshno"></div>
+            <div class="bdspno"></div>
+            <div class="plano"></div>
+            <div class="svno"></div>
+            <div class="plzano"></div>
+        </div></li>
+        <li><div class="pokemon"><a class="name">Raticate</a>
+            <div class="swshno"></div>
+            <div class="bdspyes"></div>
+            <div class="plano"></div>
+            <div class="svno"></div>
+            <div class="plzano"></div>
+        </div></li>
+        <li><div class="pokemon"><a class="name">Raticate (Alola)</a>
+            <div class="swshno"></div>
+            <div class="bdspno"></div>
+            <div class="plano"></div>
+            <div class="svno"></div>
+            <div class="plzano"></div>
+        </div></li>
+        <li><div class="pokemon"><a class="name">Ekans</a>
+            <div class="swshno"></div>
+            <div class="bdspyes"></div>
+            <div class="plano"></div>
+            <div class="svyes"></div>
+            <div class="plzayes"></div>
+        </div></li>
+        <li><div class="pokemon"><a class="name">Arbok</a>
+            <div class="swshno"></div>
+            <div class="bdspyes"></div>
+            <div class="plano"></div>
+            <div class="svyes"></div>
+            <div class="plzayes"></div>
+        </div></li>
+        <li><div class="pokemon"><a class="name">Pikachu</a>
+            <div class="swshyes"></div>
+            <div class="bdspyes"></div>
+            <div class="playes"></div>
+            <div class="svyes"></div>
+            <div class="plzayes"></div>
+        </div></li>
+        <li><div class="pokemon"><a class="name">Raichu</a>
+            <div class="swshyes"></div>
+            <div class="bdspyes"></div>
+            <div class="playes"></div>
+            <div class="svyes"></div>
+            <div class="plzayes"></div>
+        </div></li>
+        <li><div class="pokemon"><a class="name">Raichu (Alola)</a>
+            <div class="swshyes"></div>
+            <div class="bdspno"></div>
+            <div class="plano"></div>
+            <div class="svyes"></div>
+            <div class="plzayes"></div>
+        </div></li>
+        <li><div class="pokemon"><a class="name">Sandshrew</a>
+            <div class="swshyes"></div>
+            <div class="bdspyes"></div>
+            <div class="plano"></div>
+            <div class="svyes"></div>
+            <div class="plzano"></div>
+        </div></li>
+        <li><div class="pokemon"><a class="name">Sandshrew (Alola)</a>
+            <div class="swshyes"></div>
+            <div class="bdspno"></div>
+            <div class="plano"></div>
+            <div class="svyes"></div>
+            <div class="plzano"></div>
+        </div></li>
+        <li><div class="pokemon"><a class="name">Sandslash</a>
+            <div class="swshyes"></div>
+            <div class="bdspyes"></div>
+            <div class="plano"></div>
+            <div class="svyes"></div>
+            <div class="plzano"></div>
+        </div></li>
+        <li><div class="pokemon"><a class="name">Sandslash (Alola)</a>
+            <div class="swshyes"></div>
+            <div class="bdspno"></div>
+            <div class="plano"></div>
+            <div class="svyes"></div>
+            <div class="plzano"></div>
+        </div></li>
+        <li><div class="pokemon"><a class="name">Nidoran♀</a>
+            <div class="swshyes"></div>
+            <div class="bdspyes"></div>
+            <div class="plano"></div>
+            <div class="svno"></div>
+            <div class="plzano"></div>
+        </div></li>
+        <li><div class="pokemon"><a class="name">Nidorina</a>
+            <div class="swshyes"></div>
+            <div class="bdspyes"></div>
+            <div class="plano"></div>
+            <div class="svno"></div>
+            <div class="plzano"></div>
+        </div></li>
+        <li><div class="pokemon"><a class="name">Nidoqueen</a>
+            <div class="swshyes"></div>
+            <div class="bdspyes"></div>
+            <div class="plano"></div>
+            <div class="svno"></div>
+            <div class="plzano"></div>
+        </div></li>
+        <li><div class="pokemon"><a class="name">Nidoran♂</a>
+            <div class="swshyes"></div>
+            <div class="bdspyes"></div>
+            <div class="plano"></div>
+            <div class="svno"></div>
+            <div class="plzano"></div>
+        </div></li>
+        <li><div class="pokemon"><a class="name">Nidorino</a>
+            <div class="swshyes"></div>
+            <div class="bdspyes"></div>
+            <div class="plano"></div>
+            <div class="svno"></div>
+            <div class="plzano"></div>
+        </div></li>
+        <li><div class="pokemon"><a class="name">Nidoking</a>
+            <div class="swshyes"></div>
+            <div class="bdspyes"></div>
+            <div class="plano"></div>
+            <div class="svno"></div>
+            <div class="plzano"></div>
+        </div></li>
+        <li><div class="pokemon"><a class="name">Clefairy</a>
+            <div class="swshyes"></div>
+            <div class="bdspyes"></div>
+            <div class="playes"></div>
+            <div class="svyes"></div>
+            <div class="plzayes"></div>
+        </div></li>
+        <li><div class="pokemon"><a class="name">Clefable</a>
+            <div class="swshyes"></div>
+            <div class="bdspyes"></div>
+            <div class="playes"></div>
+            <div class="svyes"></div>
+            <div class="plzayes"></div>
+        </div></li>
+        <li><div class="pokemon"><a class="name">Vulpix</a>
+            <div class="swshyes"></div>
+            <div class="bdspyes"></div>
+            <div class="playes"></div>
+            <div class="svyes"></div>
+            <div class="plzano"></div>
+        </div></li>
+        <li><div class="pokemon"><a class="name">Vulpix (Alola)</a>
+            <div class="swshyes"></div>
+            <div class="bdspno"></div>
+            <div class="playes"></div>
+            <div class="svyes"></div>
+            <div class="plzano"></div>
+        </div></li>
+        <li><div class="pokemon"><a class="name">Ninetales</a>
+            <div class="swshyes"></div>
+            <div class="bdspyes"></div>
+            <div class="playes"></div>
+            <div class="svyes"></div>
+            <div class="plzano"></div>
+        </div></li>
+        <li><div class="pokemon"><a class="name">Ninetales (Alola)</a>
+            <div class="swshyes"></div>
+            <div class="bdspno"></div>
+            <div class="playes"></div>
+            <div class="svyes"></div>
+            <div class="plzano"></div>
+        </div></li>
+        <li><div class="pokemon"><a class="name">Jigglypuff</a>
+            <div class="swshyes"></div>
+            <div class="bdspyes"></div>
+            <div class="plano"></div>
+            <div class="svyes"></div>
+            <div class="plzano"></div>
+        </div></li>
+        <li><div class="pokemon"><a class="name">Wigglytuff</a>
+            <div class="swshyes"></div>
+            <div class="bdspyes"></div>
+            <div class="plano"></div>
+            <div class="svyes"></div>
+            <div class="plzano"></div>
+        </div></li>
+        <li><div class="pokemon"><a class="name">Zubat</a>
+            <div class="swshyes"></div>
+            <div class="bdspyes"></div>
+            <div class="playes"></div>
+            <div class="svno"></div>
+            <div class="plzano"></div>
+        </div></li>
+        <li><div class="pokemon"><a class="name">Golbat</a>
+            <div class="swshyes"></div>
+            <div class="bdspyes"></div>
+            <div class="playes"></div>
+            <div class="svno"></div>
+            <div class="plzano"></div>
+        </div></li>
+        <li><div class="pokemon"><a class="name">Oddish</a>
+            <div class="swshyes"></div>
+            <div class="bdspyes"></div>
+            <div class="plano"></div>
+            <div class="svyes"></div>
+            <div class="plzano"></div>
+        </div></li>
+        <li><div class="pokemon"><a class="name">Gloom</a>
+            <div class="swshyes"></div>
+            <div class="bdspyes"></div>
+            <div class="plano"></div>
+            <div class="svyes"></div>
+            <div class="plzano"></div>
+        </div></li>
+        <li><div class="pokemon"><a class="name">Vileplume</a>
+            <div class="swshyes"></div>
+            <div class="bdspyes"></div>
+            <div class="plano"></div>
+            <div class="svyes"></div>
+            <div class="plzano"></div>
+        </div></li>
+        <li><div class="pokemon"><a class="name">Paras</a>
+            <div class="swshno"></div>
+            <div class="bdspyes"></div>
+            <div class="playes"></div>
+            <div class="svno"></div>
+            <div class="plzano"></div>
+        </div></li>
+        <li><div class="pokemon"><a class="name">Parasect</a>
+            <div class="swshno"></div>
+            <div class="bdspyes"></div>
+            <div class="playes"></div>
+            <div class="svno"></div>
+            <div class="plzano"></div>
+        </div></li>
+        <li><div class="pokemon"><a class="name">Venonat</a>
+            <div class="swshno"></div>
+            <div class="bdspyes"></div>
+            <div class="plano"></div>
+            <div class="svyes"></div>
+            <div class="plzano"></div>
+        </div></li>
+        <li><div class="pokemon"><a class="name">Venomoth</a>
+            <div class="swshno"></div>
+            <div class="bdspyes"></div>
+            <div class="plano"></div>
+            <div class="svyes"></div>
+            <div class="plzano"></div>
+        </div></li>
+        <li><div class="pokemon"><a class="name">Diglett</a>
+            <div class="swshyes"></div>
+            <div class="bdspyes"></div>
+            <div class="plano"></div>
+            <div class="svyes"></div>
+            <div class="plzano"></div>
+        </div></li>
+        <li><div class="pokemon"><a class="name">Diglett (Alola)</a>
+            <div class="swshyes"></div>
+            <div class="bdspno"></div>
+            <div class="plano"></div>
+            <div class="svyes"></div>
+            <div class="plzano"></div>
+        </div></li>
+        <li><div class="pokemon"><a class="name">Dugtrio</a>
+            <div class="swshyes"></div>
+            <div class="bdspyes"></div>
+            <div class="plano"></div>
+            <div class="svyes"></div>
+            <div class="plzano"></div>
+        </div></li>
+        <li><div class="pokemon"><a class="name">Dugtrio (Alola)</a>
+            <div class="swshyes"></div>
+            <div class="bdspno"></div>
+            <div class="plano"></div>
+            <div class="svyes"></div>
+            <div class="plzano"></div>
+        </div></li>
+        <li><div class="pokemon"><a class="name">Meowth</a>
+            <div class="swshyes"></div>
+            <div class="bdspyes"></div>
+            <div class="plano"></div>
+            <div class="svyes"></div>
+            <div class="plzano"></div>
+        </div></li>
+        <li><div class="pokemon"><a class="name">Meowth (Alola)</a>
+            <div class="swshyes"></div>
+            <div class="bdspno"></div>
+            <div class="plano"></div>
+            <div class="svyes"></div>
+            <div class="plzano"></div>
+        </div></li>
+        <li><div class="pokemon"><a class="name">Meowth (Galar)</a>
+            <div class="swshyes"></div>
+            <div class="bdspno"></div>
+            <div class="plano"></div>
+            <div class="svyes"></div>
+            <div class="plzano"></div>
+        </div></li>
+        <li><div class="pokemon"><a class="name">Persain</a>
+            <div class="swshyes"></div>
+            <div class="bdspyes"></div>
+            <div class="plano"></div>
+            <div class="svyes"></div>
+            <div class="plzano"></div>
+        </div></li>
+        <li><div class="pokemon"><a class="name">Persain (Alola)</a>
+            <div class="swshyes"></div>
+            <div class="bdspno"></div>
+            <div class="plano"></div>
+            <div class="svyes"></div>
+            <div class="plzano"></div>
+        </div></li>
+        <li><div class="pokemon"><a class="name">Psyduck</a>
+            <div class="swshyes"></div>
+            <div class="bdspyes"></div>
+            <div class="playes"></div>
+            <div class="svyes"></div>
+            <div class="plzano"></div>
+        </div></li>
+        <li><div class="pokemon"><a class="name">Golduck</a>
+            <div class="swshyes"></div>
+            <div class="bdspyes"></div>
+            <div class="playes"></div>
+            <div class="svyes"></div>
+            <div class="plzano"></div>
+        </div></li>
+        <li><div class="pokemon"><a class="name">Mankey</a>
+            <div class="swshno"></div>
+            <div class="bdspyes"></div>
+            <div class="plano"></div>
+            <div class="svyes"></div>
+            <div class="plzano"></div>
+        </div></li>
+        <li><div class="pokemon"><a class="name">Primeape</a>
+            <div class="swshno"></div>
+            <div class="bdspyes"></div>
+            <div class="plano"></div>
+            <div class="svyes"></div>
+            <div class="plzano"></div>
+        </div></li>
+        <li><div class="pokemon"><a class="name">Growlithe</a>
+            <div class="swshyes"></div>
+            <div class="bdspyes"></div>
+            <div class="plano"></div>
+            <div class="svyes"></div>
+            <div class="plzano"></div>
+        </div></li>
+        <li><div class="pokemon"><a class="name">Growlithe (Hisui)</a>
+            <div class="swshno"></div>
+            <div class="bdspno"></div>
+            <div class="playes"></div>
+            <div class="svyes"></div>
+            <div class="plzano"></div>
+        </div></li>
+        <li><div class="pokemon"><a class="name">Arcanine</a>
+            <div class="swshyes"></div>
+            <div class="bdspyes"></div>
+            <div class="plano"></div>
+            <div class="svyes"></div>
+            <div class="plzano"></div>
+        </div></li>
+        <li><div class="pokemon"><a class="name">Arcanine (Hisui)</a>
+            <div class="swshno"></div>
+            <div class="bdspno"></div>
+            <div class="playes"></div>
+            <div class="svyes"></div>
+            <div class="plzano"></div>
+        </div></li>
+        <li><div class="pokemon"><a class="name">Poliwag</a>
+            <div class="swshyes"></div>
+            <div class="bdspyes"></div>
+            <div class="plano"></div>
+            <div class="svyes"></div>
+            <div class="plzano"></div>
+        </div></li>
+        <li><div class="pokemon"><a class="name">Poliwhirl</a>
+            <div class="swshyes"></div>
+            <div class="bdspyes"></div>
+            <div class="plano"></div>
+            <div class="svyes"></div>
+            <div class="plzano"></div>
+        </div></li>
+        <li><div class="pokemon"><a class="name">Poliwrath</a>
+            <div class="swshyes"></div>
+            <div class="bdspyes"></div>
+            <div class="plano"></div>
+            <div class="svyes"></div>
+            <div class="plzano"></div>
+        </div></li>
+        <li><div class="pokemon"><a class="name">Abra</a>
+            <div class="swshyes"></div>
+            <div class="bdspyes"></div>
+            <div class="playes"></div>
+            <div class="svno"></div>
+            <div class="plzayes"></div>
+        </div></li>
+        <li><div class="pokemon"><a class="name">Kadabra</a>
+            <div class="swshyes"></div>
+            <div class="bdspyes"></div>
+            <div class="playes"></div>
+            <div class="svno"></div>
+            <div class="plzayes"></div>
+        </div></li>
+        <li><div class="pokemon"><a class="name">Alakazam</a>
+            <div class="swshyes"></div>
+            <div class="bdspyes"></div>
+            <div class="playes"></div>
+            <div class="svno"></div>
+            <div class="plzayes"></div>
+        </div></li>
+        <li><div class="pokemon"><a class="name">Machop</a>
+            <div class="swshyes"></div>
+            <div class="bdspyes"></div>
+            <div class="playes"></div>
+            <div class="svno"></div>
+            <div class="plzayes"></div>
+        </div></li>
+        <li><div class="pokemon"><a class="name">Machoke</a>
+            <div class="swshyes"></div>
+            <div class="bdspyes"></div>
+            <div class="playes"></div>
+            <div class="svno"></div>
+            <div class="plzayes"></div>
+        </div></li>
+        <li><div class="pokemon"><a class="name">Machamp</a>
+            <div class="swshyes"></div>
+            <div class="bdspyes"></div>
+            <div class="playes"></div>
+            <div class="svno"></div>
+            <div class="plzayes"></div>
+        </div></li>
+        <li><div class="pokemon"><a class="name">Bellsprout</a>
+            <div class="swshno"></div>
+            <div class="bdspyes"></div>
+            <div class="plano"></div>
+            <div class="svyes"></div>
+            <div class="plzayes"></div>
+        </div></li>
+        <li><div class="pokemon"><a class="name">Weepinbell</a>
+            <div class="swshno"></div>
+            <div class="bdspyes"></div>
+            <div class="plano"></div>
+            <div class="svyes"></div>
+            <div class="plzayes"></div>
+        </div></li>
+        <li><div class="pokemon"><a class="name">Victreebell</a>
+            <div class="swshno"></div>
+            <div class="bdspyes"></div>
+            <div class="plano"></div>
+            <div class="svyes"></div>
+            <div class="plzayes"></div>
+        </div></li>
+        <li><div class="pokemon"><a class="name">Tentacool</a>
+            <div class="swshyes"></div>
+            <div class="bdspyes"></div>
+            <div class="playes"></div>
+            <div class="svyes"></div>
+            <div class="plzano"></div>
+        </div></li>
+        <li><div class="pokemon"><a class="name">Tentacruel</a>
+            <div class="swshyes"></div>
+            <div class="bdspyes"></div>
+            <div class="playes"></div>
+            <div class="svyes"></div>
+            <div class="plzano"></div>
+        </div></li>
+        <li><div class="pokemon"><a class="name">Geodude</a>
+            <div class="swshno"></div>
+            <div class="bdspyes"></div>
+            <div class="playes"></div>
+            <div class="svyes"></div>
+            <div class="plzano"></div>
+        </div></li>
+        <li><div class="pokemon"><a class="name">Geodude (Alola)</a>
+            <div class="swshno"></div>
+            <div class="bdspno"></div>
+            <div class="plano"></div>
+            <div class="svyes"></div>
+            <div class="plzano"></div>
+        </div></li>
+        <li><div class="pokemon"><a class="name">Graveler</a>
+            <div class="swshno"></div>
+            <div class="bdspyes"></div>
+            <div class="playes"></div>
+            <div class="svyes"></div>
+            <div class="plzano"></div>
+        </div></li>
+        <li><div class="pokemon"><a class="name">Graveler (Alola)</a>
+            <div class="swshno"></div>
+            <div class="bdspno"></div>
+            <div class="plano"></div>
+            <div class="svyes"></div>
+            <div class="plzano"></div>
+        </div></li>
+        <li><div class="pokemon"><a class="name">Golem</a>
+            <div class="swshno"></div>
+            <div class="bdspyes"></div>
+            <div class="playes"></div>
+            <div class="svyes"></div>
+            <div class="plzano"></div>
+        </div></li>
+        <li><div class="pokemon"><a class="name">Golem (Alola)</a>
+            <div class="swshno"></div>
+            <div class="bdspno"></div>
+            <div class="plano"></div>
+            <div class="svyes"></div>
+            <div class="plzano"></div>
+        </div></li>
+        <li><div class="pokemon"><a class="name">Ponyta</a>
+            <div class="swshyes"></div>
+            <div class="bdspyes"></div>
+            <div class="playes"></div>
+            <div class="svno"></div>
+            <div class="plzano"></div>
+        </div></li>
+        <li><div class="pokemon"><a class="name">Ponyta (Galar)</a>
+            <div class="swshyes"></div>
+            <div class="bdspno"></div>
+            <div class="plano"></div>
+            <div class="svno"></div>
+            <div class="plzano"></div>
+        </div></li>
+        <li><div class="pokemon"><a class="name">Rapidash</a>
+            <div class="swshyes"></div>
+            <div class="bdspyes"></div>
+            <div class="playes"></div>
+            <div class="svno"></div>
+            <div class="plzano"></div>
+        </div></li>
+        <li><div class="pokemon"><a class="name">Rapidash (Galar)</a>
+            <div class="swshyes"></div>
+            <div class="bdspno"></div>
+            <div class="plano"></div>
+            <div class="svno"></div>
+            <div class="plzano"></div>
+        </div></li>
+        <li><div class="pokemon"><a class="name">Slowpoke</a>
+            <div class="swshyes"></div>
+            <div class="bdspyes"></div>
+            <div class="plano"></div>
+            <div class="svyes"></div>
+            <div class="plzayes"></div>
+        </div></li>
+        <li><div class="pokemon"><a class="name">Slowpoke (Galar)</a>
+            <div class="swshyes"></div>
+            <div class="bdspno"></div>
+            <div class="plano"></div>
+            <div class="svyes"></div>
+            <div class="plzayes"></div>
+        </div></li>
+        <li><div class="pokemon"><a class="name">Slowbro</a>
+            <div class="swshyes"></div>
+            <div class="bdspyes"></div>
+            <div class="plano"></div>
+            <div class="svyes"></div>
+            <div class="plzayes"></div>
+        </div></li>
+        <li><div class="pokemon"><a class="name">Slowbro (Galar)</a>
+            <div class="swshyes"></div>
+            <div class="bdspno"></div>
+            <div class="plano"></div>
+            <div class="svyes"></div>
+            <div class="plzayes"></div>
+        </div></li>
+        <li><div class="pokemon"><a class="name">Magnemite</a>
+            <div class="swshyes"></div>
+            <div class="bdspyes"></div>
+            <div class="playes"></div>
+            <div class="svyes"></div>
+            <div class="plzano"></div>
+        </div></li>
+        <li><div class="pokemon"><a class="name">Magneton</a>
+            <div class="swshyes"></div>
+            <div class="bdspyes"></div>
+            <div class="playes"></div>
+            <div class="svyes"></div>
+            <div class="plzano"></div>
+        </div></li>
+        <li><div class="pokemon"><a class="name">Farfetch'd</a>
+            <div class="swshyes"></div>
+            <div class="bdspyes"></div>
+            <div class="plano"></div>
+            <div class="svno"></div>
+            <div class="plzano"></div>
+        </div></li>
+        <li><div class="pokemon"><a class="name">Farfetch'd (Galar)</a>
+            <div class="swshyes"></div>
+            <div class="bdspno"></div>
+            <div class="plano"></div>
+            <div class="svno"></div>
+            <div class="plzano"></div>
+        </div></li>
+        <li><div class="pokemon"><a class="name">Doduo</a>
+            <div class="swshno"></div>
+            <div class="bdspyes"></div>
+            <div class="plano"></div>
+            <div class="svyes"></div>
+            <div class="plzano"></div>
+        </div></li>
+        <li><div class="pokemon"><a class="name">Dodrio</a>
+            <div class="swshno"></div>
+            <div class="bdspyes"></div>
+            <div class="plano"></div>
+            <div class="svyes"></div>
+            <div class="plzano"></div>
+        </div></li>
+        <li><div class="pokemon"><a class="name">Seel</a>
+            <div class="swshno"></div>
+            <div class="bdspyes"></div>
+            <div class="plano"></div>
+            <div class="svyes"></div>
+            <div class="plzano"></div>
+        </div></li>
+        <li><div class="pokemon"><a class="name">Dewgong</a>
+            <div class="swshno"></div>
+            <div class="bdspyes"></div>
+            <div class="plano"></div>
+            <div class="svyes"></div>
+            <div class="plzano"></div>
+        </div></li>
+        <li><div class="pokemon"><a class="name">Grimer</a>
+            <div class="swshno"></div>
+            <div class="bdspyes"></div>
+            <div class="plano"></div>
+            <div class="svyes"></div>
+            <div class="plzano"></div>
+        </div></li>
+        <li><div class="pokemon"><a class="name">Grimer (Alola)</a>
+            <div class="swshno"></div>
+            <div class="bdspno"></div>
+            <div class="plano"></div>
+            <div class="svyes"></div>
+            <div class="plzano"></div>
+        </div></li>
+        <li><div class="pokemon"><a class="name">Muk</a>
+            <div class="swshno"></div>
+            <div class="bdspyes"></div>
+            <div class="plano"></div>
+            <div class="svyes"></div>
+            <div class="plzano"></div>
+        </div></li>
+        <li><div class="pokemon"><a class="name">Muk (Alola)</a>
+            <div class="swshno"></div>
+            <div class="bdspno"></div>
+            <div class="plano"></div>
+            <div class="svyes"></div>
+            <div class="plzano"></div>
+        </div></li>
+        <li><div class="pokemon"><a class="name">Shellder</a>
+            <div class="swshyes"></div>
+            <div class="bdspyes"></div>
+            <div class="plano"></div>
+            <div class="svyes"></div>
+            <div class="plzano"></div>
+        </div></li>
+        <li><div class="pokemon"><a class="name">Cloyster</a>
+            <div class="swshyes"></div>
+            <div class="bdspyes"></div>
+            <div class="plano"></div>
+            <div class="svyes"></div>
+            <div class="plzano"></div>
+        </div></li>
+        <li><div class="pokemon"><a class="name">Gastly</a>
+            <div class="swshyes"></div>
+            <div class="bdspyes"></div>
+            <div class="playes"></div>
+            <div class="svyes"></div>
+            <div class="plzayes"></div>
+        </div></li>
+        <li><div class="pokemon"><a class="name">Haunter</a>
+            <div class="swshyes"></div>
+            <div class="bdspyes"></div>
+            <div class="playes"></div>
+            <div class="svyes"></div>
+            <div class="plzayes"></div>
+        </div></li>
+        <li><div class="pokemon"><a class="name">Gengar</a>
+            <div class="swshyes"></div>
+            <div class="bdspyes"></div>
+            <div class="playes"></div>
+            <div class="svyes"></div>
+            <div class="plzayes"></div>
+        </div></li>
+        <li><div class="pokemon"><a class="name">Onix</a>
+            <div class="swshyes"></div>
+            <div class="bdspyes"></div>
+            <div class="playes"></div>
+            <div class="svno"></div>
+            <div class="plzayes"></div>
+        </div></li>
+        <li><div class="pokemon"><a class="name">Drowzee</a>
+            <div class="swshno"></div>
+            <div class="bdspyes"></div>
+            <div class="plano"></div>
+            <div class="svyes"></div>
+            <div class="plzano"></div>
+        </div></li>
+        <li><div class="pokemon"><a class="name">Hypno</a>
+            <div class="swshno"></div>
+            <div class="bdspyes"></div>
+            <div class="plano"></div>
+            <div class="svyes"></div>
+            <div class="plzano"></div>
+        </div></li>
+        <li><div class="pokemon"><a class="name">Krabby</a>
+            <div class="swshyes"></div>
+            <div class="bdspyes"></div>
+            <div class="plano"></div>
+            <div class="svno"></div>
+            <div class="plzano"></div>
+        </div></li>
+        <li><div class="pokemon"><a class="name">Kingler</a>
+            <div class="swshyes"></div>
+            <div class="bdspyes"></div>
+            <div class="plano"></div>
+            <div class="svno"></div>
+            <div class="plzano"></div>
+        </div></li>
+        <li><div class="pokemon"><a class="name">Voltorb</a>
+            <div class="swshno"></div>
+            <div class="bdspyes"></div>
+            <div class="plano"></div>
+            <div class="svyes"></div>
+            <div class="plzano"></div>
+        </div></li>
+        <li><div class="pokemon"><a class="name">Voltorb (Hisui)</a>
+            <div class="swshno"></div>
+            <div class="bdspno"></div>
+            <div class="playes"></div>
+            <div class="svyes"></div>
+            <div class="plzano"></div>
+        </div></li>
+        <li><div class="pokemon"><a class="name">Electrode</a>
+            <div class="swshno"></div>
+            <div class="bdspyes"></div>
+            <div class="plano"></div>
+            <div class="svyes"></div>
+            <div class="plzano"></div>
+        </div></li>
+        <li><div class="pokemon"><a class="name">Electrode (Hisui)</a>
+            <div class="swshno"></div>
+            <div class="bdspno"></div>
+            <div class="playes"></div>
+            <div class="svyes"></div>
+            <div class="plzano"></div>
+        </div></li>
+        <li><div class="pokemon"><a class="name">Exeggcute</a>
+            <div class="swshyes"></div>
+            <div class="bdspyes"></div>
+            <div class="plano"></div>
+            <div class="svyes"></div>
+            <div class="plzano"></div>
+        </div></li>
+        <li><div class="pokemon"><a class="name">Exeggutor</a>
+            <div class="swshyes"></div>
+            <div class="bdspyes"></div>
+            <div class="plano"></div>
+            <div class="svyes"></div>
+            <div class="plzano"></div>
+        </div></li>
+        <li><div class="pokemon"><a class="name">Exeggutor (Alola)</a>
+            <div class="swshyes"></div>
+            <div class="bdspno"></div>
+            <div class="plano"></div>
+            <div class="svyes"></div>
+            <div class="plzano"></div>
+        </div></li>
+        <li><div class="pokemon"><a class="name">Cubone</a>
+            <div class="swshyes"></div>
+            <div class="bdspyes"></div>
+            <div class="plano"></div>
+            <div class="svno"></div>
+            <div class="plzano"></div>
+        </div></li>
+        <li><div class="pokemon"><a class="name">Marowak</a>
+            <div class="swshyes"></div>
+            <div class="bdspyes"></div>
+            <div class="plano"></div>
+            <div class="svno"></div>
+            <div class="plzano"></div>
+        </div></li>
+        <li><div class="pokemon"><a class="name">Marowak (Alola)</a>
+            <div class="swshyes"></div>
+            <div class="bdspno"></div>
+            <div class="plano"></div>
+            <div class="svno"></div>
+            <div class="plzano"></div>
+        </div></li>
+        <li><div class="pokemon"><a class="name">Hitmonlee</a>
+            <div class="swshyes"></div>
+            <div class="bdspyes"></div>
+            <div class="plano"></div>
+            <div class="svyes"></div>
+            <div class="plzano"></div>
+        </div></li>
+        <li><div class="pokemon"><a class="name">Hitmonchan</a>
+            <div class="swshyes"></div>
+            <div class="bdspyes"></div>
+            <div class="plano"></div>
+            <div class="svyes"></div>
+            <div class="plzano"></div>
+        </div></li>
+        <li><div class="pokemon"><a class="name">Lickitung</a>
+            <div class="swshyes"></div>
+            <div class="bdspyes"></div>
+            <div class="playes"></div>
+            <div class="svno"></div>
+            <div class="plzano"></div>
+        </div></li>
+        <li><div class="pokemon"><a class="name">Koffing</a>
+            <div class="swshyes"></div>
+            <div class="bdspyes"></div>
+            <div class="plano"></div>
+            <div class="svyes"></div>
+            <div class="plzano"></div>
+        </div></li>
+        <li><div class="pokemon"><a class="name">Weezing</a>
+            <div class="swshyes"></div>
+            <div class="bdspyes"></div>
+            <div class="plano"></div>
+            <div class="svyes"></div>
+            <div class="plzano"></div>
+        </div></li>
+        <li><div class="pokemon"><a class="name">Weezing (Galar)</a>
+            <div class="swshyes"></div>
+            <div class="bdspno"></div>
+            <div class="plano"></div>
+            <div class="svyes"></div>
+            <div class="plzano"></div>
+        </div></li>
+        <li><div class="pokemon"><a class="name">Rhyhorn</a>
+            <div class="swshyes"></div>
+            <div class="bdspyes"></div>
+            <div class="playes"></div>
+            <div class="svyes"></div>
+            <div class="plzano"></div>
+        </div></li>
+        <li><div class="pokemon"><a class="name">Rhydon</a>
+            <div class="swshyes"></div>
+            <div class="bdspyes"></div>
+            <div class="playes"></div>
+            <div class="svyes"></div>
+            <div class="plzano"></div>
+        </div></li>
+        <li><div class="pokemon"><a class="name">Chansey</a>
+            <div class="swshyes"></div>
+            <div class="bdspyes"></div>
+            <div class="playes"></div>
+            <div class="svyes"></div>
+            <div class="plzano"></div>
+        </div></li>
+        <li><div class="pokemon"><a class="name">Tangela</a>
+            <div class="swshyes"></div>
+            <div class="bdspyes"></div>
+            <div class="playes"></div>
+            <div class="svno"></div>
+            <div class="plzano"></div>
+        </div></li>
+        <li><div class="pokemon"><a class="name">Kangaskhan</a>
+            <div class="swshyes"></div>
+            <div class="bdspyes"></div>
+            <div class="plano"></div>
+            <div class="svno"></div>
+            <div class="plzayes"></div>
+        </div></li>
+        <li><div class="pokemon"><a class="name">Horsea</a>
+            <div class="swshyes"></div>
+            <div class="bdspyes"></div>
+            <div class="plano"></div>
+            <div class="svyes"></div>
+            <div class="plzano"></div>
+        </div></li>
+        <li><div class="pokemon"><a class="name">Seadra</a>
+            <div class="swshyes"></div>
+            <div class="bdspyes"></div>
+            <div class="plano"></div>
+            <div class="svyes"></div>
+            <div class="plzano"></div>
+        </div></li>
+        <li><div class="pokemon"><a class="name">Goldeen</a>
+            <div class="swshyes"></div>
+            <div class="bdspyes"></div>
+            <div class="plano"></div>
+            <div class="svno"></div>
+            <div class="plzano"></div>
+        </div></li>
+        <li><div class="pokemon"><a class="name">Seaking</a>
+            <div class="swshyes"></div>
+            <div class="bdspyes"></div>
+            <div class="plano"></div>
+            <div class="svno"></div>
+            <div class="plzano"></div>
+        </div></li>
+        <li><div class="pokemon"><a class="name">Staryu</a>
+            <div class="swshyes"></div>
+            <div class="bdspyes"></div>
+            <div class="plano"></div>
+            <div class="svno"></div>
+            <div class="plzano"></div>
+        </div></li>
+        <li><div class="pokemon"><a class="name">Starmie</a>
+            <div class="swshyes"></div>
+            <div class="bdspyes"></div>
+            <div class="plano"></div>
+            <div class="svno"></div>
+            <div class="plzano"></div>
+        </div></li>
+        <li><div class="pokemon"><a class="name">Mr. Mime</a>
+            <div class="swshyes"></div>
+            <div class="bdspyes"></div>
+            <div class="playes"></div>
+            <div class="svno"></div>
+            <div class="plzano"></div>
+        </div></li>
+        <li><div class="pokemon"><a class="name">Mr. Mime (Galar)</a>
+            <div class="swshyes"></div>
+            <div class="bdspno"></div>
+            <div class="plano"></div>
+            <div class="svno"></div>
+            <div class="plzano"></div>
+        </div></li>
+        <li><div class="pokemon"><a class="name">Scyther</a>
+            <div class="swshyes"></div>
+            <div class="bdspyes"></div>
+            <div class="playes"></div>
+            <div class="svyes"></div>
+            <div class="plzayes"></div>
+        </div></li>
+        <li><div class="pokemon"><a class="name">Jynx</a>
+            <div class="swshyes"></div>
+            <div class="bdspyes"></div>
+            <div class="plano"></div>
+            <div class="svno"></div>
+            <div class="plzano"></div>
+        </div></li>
+        <li><div class="pokemon"><a class="name">Electabuzz</a>
+            <div class="swshyes"></div>
+            <div class="bdspyes"></div>
+            <div class="playes"></div>
+            <div class="svyes"></div>
+            <div class="plzano"></div>
+        </div></li>
+        <li><div class="pokemon"><a class="name">Magmar</a>
+            <div class="swshyes"></div>
+            <div class="bdspyes"></div>
+            <div class="playes"></div>
+            <div class="svyes"></div>
+            <div class="plzano"></div>
+        </div></li>
+        <li><div class="pokemon"><a class="name">Pinsir</a>
+            <div class="swshyes"></div>
+            <div class="bdspyes"></div>
+            <div class="plano"></div>
+            <div class="svno"></div>
+            <div class="plzayes"></div>
+        </div></li>
+        <li><div class="pokemon"><a class="name">Tauros</a>
+            <div class="swshyes"></div>
+            <div class="bdspyes"></div>
+            <div class="plano"></div>
+            <div class="svyes"></div>
+            <div class="plzano"></div>
+        </div></li>
+        <li><div class="pokemon"><a class="name">Tauros (Paldea)</a>
+            <div class="swshno"></div>
+            <div class="bdspno"></div>
+            <div class="plano"></div>
+            <div class="svyes"></div>
+            <div class="plzano"></div>
+        </div></li>
+        <li><div class="pokemon"><a class="name">Magikarp</a>
+            <div class="swshyes"></div>
+            <div class="bdspyes"></div>
+            <div class="playes"></div>
+            <div class="svyes"></div>
+            <div class="plzayes"></div>
+        </div></li>
+        <li><div class="pokemon"><a class="name">Gyarados</a>
+            <div class="swshyes"></div>
+            <div class="bdspyes"></div>
+            <div class="playes"></div>
+            <div class="svyes"></div>
+            <div class="plzayes"></div>
+        </div></li>
+        <li><div class="pokemon"><a class="name">Lapras</a>
+            <div class="swshyes"></div>
+            <div class="bdspyes"></div>
+            <div class="plano"></div>
+            <div class="svyes"></div>
+            <div class="plzano"></div>
+        </div></li>
+        <li><div class="pokemon"><a class="name">Ditto</a>
+            <div class="swshyes"></div>
+            <div class="bdspyes"></div>
+            <div class="plano"></div>
+            <div class="svyes"></div>
+            <div class="plzano"></div>
+        </div></li>
+        <li><div class="pokemon"><a class="name">Eevee</a>
+            <div class="swshyes"></div>
+            <div class="bdspyes"></div>
+            <div class="playes"></div>
+            <div class="svyes"></div>
+            <div class="plzayes"></div>
+        </div></li>
+        <li><div class="pokemon"><a class="name">Vaporeon</a>
+            <div class="swshyes"></div>
+            <div class="bdspyes"></div>
+            <div class="playes"></div>
+            <div class="svyes"></div>
+            <div class="plzayes"></div>
+        </div></li>
+        <li><div class="pokemon"><a class="name">Jolteon</a>
+            <div class="swshyes"></div>
+            <div class="bdspyes"></div>
+            <div class="playes"></div>
+            <div class="svyes"></div>
+            <div class="plzayes"></div>
+        </div></li>
+        <li><div class="pokemon"><a class="name">Flareon</a>
+            <div class="swshyes"></div>
+            <div class="bdspyes"></div>
+            <div class="playes"></div>
+            <div class="svyes"></div>
+            <div class="plzayes"></div>
+        </div></li>
+        <li><div class="pokemon"><a class="name">Porygon</a>
+            <div class="swshyes"></div>
+            <div class="bdspyes"></div>
+            <div class="playes"></div>
+            <div class="svyes"></div>
+            <div class="plzano"></div>
+        </div></li>
+        <li><div class="pokemon"><a class="name">Omanyte</a>
+            <div class="swshyes"></div>
+            <div class="bdspyes"></div>
+            <div class="plano"></div>
+            <div class="svno"></div>
+            <div class="plzano"></div>
+        </div></li>
+        <li><div class="pokemon"><a class="name">Omastar</a>
+            <div class="swshyes"></div>
+            <div class="bdspyes"></div>
+            <div class="plano"></div>
+            <div class="svno"></div>
+            <div class="plzano"></div>
+        </div></li>
+        <li><div class="pokemon"><a class="name">Kabuto</a>
+            <div class="swshyes"></div>
+            <div class="bdspyes"></div>
+            <div class="plano"></div>
+            <div class="svno"></div>
+            <div class="plzano"></div>
+        </div></li>
+        <li><div class="pokemon"><a class="name">Kabutops</a>
+            <div class="swshyes"></div>
+            <div class="bdspyes"></div>
+            <div class="plano"></div>
+            <div class="svno"></div>
+            <div class="plzano"></div>
+        </div></li>
+        <li><div class="pokemon"><a class="name">Aerodactyl</a>
+            <div class="swshyes"></div>
+            <div class="bdspyes"></div>
+            <div class="plano"></div>
+            <div class="svno"></div>
+            <div class="plzayes"></div>
+        </div></li>
+        <li><div class="pokemon"><a class="name">Snorlax</a>
+            <div class="swshyes"></div>
+            <div class="bdspyes"></div>
+            <div class="playes"></div>
+            <div class="svyes"></div>
+            <div class="plzano"></div>
+        </div></li>
+        <li><div class="pokemon"><a class="name">Articuno</a>
+            <div class="swshyes"></div>
+            <div class="bdspyes"></div>
+            <div class="plano"></div>
+            <div class="svyes"></div>
+            <div class="plzano"></div>
+        </div></li>
+        <li><div class="pokemon"><a class="name">Articuno (Galar)</a>
+            <div class="swshyes"></div>
+            <div class="bdspno"></div>
+            <div class="plano"></div>
+            <div class="svyes"></div>
+            <div class="plzano"></div>
+        </div></li>
+        <li><div class="pokemon"><a class="name">Zapdos</a>
+            <div class="swshyes"></div>
+            <div class="bdspyes"></div>
+            <div class="plano"></div>
+            <div class="svyes"></div>
+            <div class="plzano"></div>
+        </div></li>
+        <li><div class="pokemon"><a class="name">Zapdos (Galar)</a>
+            <div class="swshyes"></div>
+            <div class="bdspno"></div>
+            <div class="plano"></div>
+            <div class="svyes"></div>
+            <div class="plzano"></div>
+        </div></li>
+        <li><div class="pokemon"><a class="name">Moltres</a>
+            <div class="swshyes"></div>
+            <div class="bdspyes"></div>
+            <div class="plano"></div>
+            <div class="svyes"></div>
+            <div class="plzano"></div>
+        </div></li>
+        <li><div class="pokemon"><a class="name">Moltres (Galar)</a>
+            <div class="swshyes"></div>
+            <div class="bdspno"></div>
+            <div class="plano"></div>
+            <div class="svyes"></div>
+            <div class="plzano"></div>
+        </div></li>
+        <li><div class="pokemon"><a class="name">Dratini</a>
+            <div class="swshyes"></div>
+            <div class="bdspyes"></div>
+            <div class="plano"></div>
+            <div class="svyes"></div>
+            <div class="plzayes"></div>
+        </div></li>
+        <li><div class="pokemon"><a class="name">Dragonair</a>
+            <div class="swshyes"></div>
+            <div class="bdspyes"></div>
+            <div class="plano"></div>
+            <div class="svyes"></div>
+            <div class="plzayes"></div>
+        </div></li>
+        <li><div class="pokemon"><a class="name">Dragonite</a>
+            <div class="swshyes"></div>
+            <div class="bdspyes"></div>
+            <div class="plano"></div>
+            <div class="svyes"></div>
+            <div class="plzayes"></div>
+        </div></li>
+        <li><div class="pokemon"><a class="name">Mewtwo</a>
+            <div class="swshyes"></div>
+            <div class="bdspyes"></div>
+            <div class="plano"></div>
+            <div class="svyes"></div>
+            <div class="plzayes"></div>
+        </div></li>
+        <li><div class="pokemon"><a class="name">Mew</a>
+            <div class="swshyes"></div>
+            <div class="bdspyes"></div>
+            <div class="plano"></div>
+            <div class="svyes"></div>
+            <div class="plzano"></div>
+        </div></li>
+    </ul>
+
+    <script src="pokemonswitch/js/main.js"></script>
+</body>
+ 
+</html>
