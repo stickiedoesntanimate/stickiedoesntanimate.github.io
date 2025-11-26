@@ -1,4 +1,11 @@
-var swsh = 2 //1 is enabled, 2 is additive, 3 is disabled
+function removefrom(thing, array) {
+    var index = array.indexOf(thing);
+    if (index > -1) { // only splice array when item is found
+        array.splice(index, 1); // 2nd parameter means remove one item only
+    }
+}
+
+var swsh = 2 //1 is AND, 2 is dont care, 3 is NOT, 4 is OR
 var bdsp = 2
 var pla = 2
 var sv = 2
@@ -44,6 +51,7 @@ function myFunction() {
 var green = "#88F86E"
 var yellow = "#EEE952"
 var red = "#BA3B46"
+var blue = "#59a9e3"
 
 function changeswsh() {
     swsh = swsh +1

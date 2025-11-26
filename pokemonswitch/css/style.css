@@ -26,7 +26,7 @@ body {
 #myUL li a {
   border: 1px solid #b1b1b1; /* Add a border to all links */
   margin-top: -1px; /* Prevent double borders */
-  background-color: #F8F5F4; /* Grey background color */
+  
   padding: 3px; /* Add some padding */
   text-decoration: none; /* Remove default text underline */
   font-size: 18px; /* Increase the font-size */
@@ -34,9 +34,7 @@ body {
   display: block; /* Make it into a block element to fill the whole list */
 }
 
-#myUL li a:hover:not(.header) {
-  background-color: #F8F5F4; /* Add a hover effect to all links, except for headers */
-}
+
 .search {
     display:grid;
     grid-template-columns: 4.9fr 1fr 1fr 1fr 1fr 1fr;
@@ -45,6 +43,17 @@ body {
     gap: 3px;
     /* margin-bottom: 3px; */
 }
+
+/* li:nth-child(even) > .pokemon {
+  background-color: #7a7a7a;
+} */
+li:nth-child(even) > .pokemon > .name { /*TODO: Zebra stripe AFTER things are removed */
+  background-color: #ffffff;
+}
+li:nth-child(odd) > .pokemon > .name {
+  background-color: #dbdbdb;
+}
+
 .pokemon {
     display:grid;
     grid-template-columns: 5fr 1fr 1fr 1fr 1fr 1fr;
