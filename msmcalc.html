@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en-US">
+ 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>StickieAnimates</title>
+    <link rel="stylesheet" href="msmcalc/css/style.css">
+</head>
+ 
+<body>
+    <div class="maincontent">
+    <div class="elementselector">
+        <div class="element">
+            <input type="checkbox" id="air">
+            <label for="air"><img src="msmcalc/assets/elements/air.webp" /></label>
+        </div>
+        <div class="element">
+            <input type="checkbox" id="plant">
+            <label for="plant"><img src="msmcalc/assets/elements/plant.webp" /></label>
+        </div>
+        <div class="element">
+            <input type="checkbox" id="earth">
+            <label for="earth"><img src="msmcalc/assets/elements/earth.webp" /></label>
+        </div>
+        <div class="element">
+            <input type="checkbox" id="water">
+            <label for="water"><img src="msmcalc/assets/elements/water.webp" /></label>
+        </div>
+        <div class="element">
+            <input type="checkbox" id="cold">
+            <label for="cold"><img src="msmcalc/assets/elements/cold.webp" /></label>
+        </div>
+        <div class="element">
+            <input type="checkbox" id="fire">
+            <label for="fire"><img src="msmcalc/assets/elements/fire.webp" /></label>
+        </div>
+        <div class="element">
+            <input type="checkbox" id="psychic">
+            <label for="psychic"><img src="msmcalc/assets/elements/psychic.webp" /></label>
+        </div>
+        <div class="element">
+            <input type="checkbox" id="bone">
+            <label for="bone"><img src="msmcalc/assets/elements/bone.webp" /></label>
+        </div>
+        <div class="element">
+            <input type="checkbox" id="light">
+            <label for="light"><img src="msmcalc/assets/elements/light.webp" /></label>
+        </div>
+        <div class="element">
+            <input type="checkbox" id="faerie">
+            <label for="faerie"><img src="msmcalc/assets/elements/faerie.webp" /></label>
+        </div>
+    </div>
+    
+    <div class="centerme">
+        <button class='calculatebutton' id='calculatebutton' onclick="calculate()"></button>
+        <label for="calculatebutton" class="calculatelabel">
+            <img class="calculatelabelimg"src="./msmcalc/assets/Button.png"/>
+            <h3 class="calculatelabeltext">Generate!</h3>
+        </label>
+    </div>
+
+    <div class="single" id="single" style="display:none;">
+        <h1>
+            Single-Element
+        </h1>
+        <div class="monsterlist">
+        </div>
+    </div>
+    <div class="double" id="double" style="display:none;" >
+        <h1>
+            Double-Element
+        </h1>
+        <div class="monsterlist">
+        </div>
+    </div>
+    <div class="triple" id="triple" style="display:none;">
+        <h1>
+            Triple-Element
+        </h1>
+        <div class="monsterlist">
+            <!-- <div class="monster">
+                <img class="monsterpicture" src="msmcalc/assets/monsters/0001000000.webp">
+                <h2>Monster</h2>
+                <div class="monsterelementbox3">
+                    <img class="monsterelement" src="msmcalc/assets/elements/air.webp">
+                    <img class="monsterelement" src="msmcalc/assets/elements/bone.webp">
+                    <img class="monsterelement" src="msmcalc/assets/elements/fire.webp">
+                </div>
+            </div> -->
+        </div>
+    </div>
+    <div class="quadruple" id="quadruple" style="display:none;">
+        <h1>
+            Quadruple-Element
+        </h1>
+        <div class="monsterlist">
+        </div>
+    </div>
+    <div class="quintuple" id="quintuple" style="display:none;">
+        <h1>
+            Quintuple-Element
+        </h1>
+        <div class="monsterlist">
+        </div>
+    </div>
+    <div class="sextuple" id="sextuple" style="display:none;">
+        <h1>
+            Sextuple-Element
+        </h1>
+        <div class="monsterlist">
+        </div>
+    </div>
+    <div class="septuple" id="septuple" style="display:none;">
+        <h1>
+            Septuple-Element
+        </h1>
+        <div class="monsterlist">
+        </div>
+    </div>
+    <div class="octuple" id="octuple" style="display:none;">
+        <h1>
+            Octuple-Element
+        </h1>
+        <div class="monsterlist">
+        </div>
+    </div>
+    <div class="nonuple" id="nonuple" style="display:none;">
+        <h1>
+            Nonuple-Element
+        </h1>
+        <div class="monsterlist">
+        </div>
+    </div>
+    <div class="decuple" id="decuple" style="display:none;">
+        <h1>
+            Decuple-Element
+        </h1>
+        <div class="monsterlist">
+        </div>
+    </div>
+    <div class="ethereal" id="ethereal" style="display:none;">
+        <h1>
+            Ethereals
+        </h1>
+        <div class="monsterlist">
+        </div>
+    </div>
+    <div class="paironormal" style="display:none;">
+        <h1>
+            Paironormals
+        </h1>
+        <div class="monsterlist" style="display:none;">
+        </div>
+    </div>
+    <div class="legendary" style="display:none;">
+        <h1>
+            Legendarys
+        </h1>
+        <div class="monsterlist">
+        </div>
+    </div>
+    <div class="seasonal" id="seasonal" style="display:none;">
+        <h1>
+            Seasonals
+        </h1>
+        <div class="monsterlist">
+        </div>
+    </div>
+    <div class="mythical" style="display:none;">
+        <h1>
+            Mythicals
+        </h1>
+        <div class="monsterlist">
+        </div>
+    </div>
+    
+    </div>
+</body>
+    <script src="msmcalc/js/main.js"></script>
+</html>
